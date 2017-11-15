@@ -1,0 +1,5 @@
+If iCurrentBP=320
+	Do $cinst.$objs.aboutSubForm.$left.$assign(50)
+Else
+	Do $cinst.$objs.aboutSubForm.$left.$assign(250)
+End If

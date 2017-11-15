@@ -1,0 +1,11 @@
+Calculate tLibName as $clib().$name()
+
+;  check if the API key has been set
+Set reference iRemoteTaskRef to $clib.$remotetasks.rtTask.$tvardefs.tAPIKey
+If not(len(iRemoteTaskRef.$objinitval))
+	Do $clib.$windows.wAPIKey.$openonce("*",kWindowCenter)
+End If
+
+Do tCityList.$define(tCity,tLastUpdate,tJSONRow,tJSONStr)
+
+Do tWorldList.$define(tCity,tJSONRow,tJSONStr)

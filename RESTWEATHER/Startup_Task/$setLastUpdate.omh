@@ -1,0 +1,7 @@
+Do tCityList.$search(tCity=pCity)
+Do tCityList.$first(kTrue)
+If not(tCityList.$line)
+	Do tCityList.$add(pCity,pUpdate,pJSONRow,pJSONStr)
+Else
+	Do tCityList.$assigncols(,pUpdate,pJSONRow,pJSONStr)
+End If

@@ -1,0 +1,12 @@
+Calculate pPoweredBy as 'Powered by <a href="http://www.apixu.com/" 𯿿title="Free local weather content provider" 𯿿target="_blank">Apixu</a>'
+
+Begin text block
+Text: {Omnis Weather is an example of using Omnis as a client to consume a Restful web service} (Carriage return)
+Text: (Carriage return)
+Text: {This example uses the restful service published by apixu.com to provide an overview} (Carriage return)
+Text: {of the current weather conditions as well as the forecast for the following 4 days} (Carriage return)
+Text: (Carriage return)
+Text: {As the forecasts are only updated every 3-4 hours, the data for a city is cached for 1 hour after initial retrieval from APIXU} (Carriage return)
+End text block
+Get text block lHelpText
+Quit method lHelpText

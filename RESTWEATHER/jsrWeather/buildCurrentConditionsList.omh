@@ -1,0 +1,17 @@
+Do iCurrentConditionsList768.$define(iCurrEventStr,iCurrEventFact,iCurrEventStr2,iCurrEventFact2)
+Do iCurrentConditionsList768.$add("Observed at",,"Cloud Cover",)
+Do iCurrentConditionsList768.$add("Temperature",,"Wind Speed",)
+Do iCurrentConditionsList768.$add("Conditions",,"Wind Direction",)
+Do iCurrentConditionsList768.$add("Pressure",,"Humidity",)
+
+Do iCurrentConditionsList.$copydefinition(iCurrentConditionsList768)
+
+Do iCurrentConditionsList320.$define(iCurrEventStr,iCurrEventFact)
+Do iCurrentConditionsList320.$add("Observed at",)
+Do iCurrentConditionsList320.$add("Temperature",)
+Do iCurrentConditionsList320.$add("Conditions",)
+Do iCurrentConditionsList320.$add("Cloud Cover",)
+Do iCurrentConditionsList320.$add("Wind Speed",)
+Do iCurrentConditionsList320.$add("Wind Direction",)
+Do iCurrentConditionsList320.$add("Pressure",)
+Do iCurrentConditionsList320.$add("Humidity",)

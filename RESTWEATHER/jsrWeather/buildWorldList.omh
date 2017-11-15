@@ -1,0 +1,27 @@
+Do iWorldWeatherList.$define(iWorldCity,iWorldCityTemp)
+Do iWorldWeatherList1.$copydefinition(iWorldWeatherList)
+Do iWorldWeatherList2.$copydefinition(iWorldWeatherList)
+Do iWorldWeatherList.$add('Amsterdam, Netherlands',)
+Do iWorldWeatherList.$add('Athens, Greece')
+Do iWorldWeatherList.$add('Auckland, New Zealand',)
+Do iWorldWeatherList.$add('Bangkok, Thailand')
+Do iWorldWeatherList.$add('Belfast, UK',)
+Do iWorldWeatherList.$add('Berlin, Germany')
+Do iWorldWeatherList.$add('Dubai, UAE',)
+Do iWorldWeatherList.$add('Hong Kong')
+Do iWorldWeatherList.$add('Lisbon, Portugal',)
+Do iWorldWeatherList.$add('London, UK')
+
+;  these 10 cities are to be used in the 2nd list
+Do iWorldWeatherList.$add('Los Angeles, USA',)
+Do iWorldWeatherList.$add('Madrid, Spain')
+Do iWorldWeatherList.$add('Moscow, Russia',)
+Do iWorldWeatherList.$add('New York, USA')
+Do iWorldWeatherList.$add('Paris, France',)
+Do iWorldWeatherList.$add('Rome, Italy')
+Do iWorldWeatherList.$add('Sydney, Australia',)
+Do iWorldWeatherList.$add('Tokyo, Japan')
+Do iWorldWeatherList.$add('Rio de Janeiro, Brazil',)
+Do iWorldWeatherList.$add('Seoul, South Korea')
+
+Calculate iWorldListTotal as iWorldWeatherList.$linecount

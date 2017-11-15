@@ -1,0 +1,9 @@
+On evBefore
+	
+On evAfter
+	If not(iNewLocation=iLocation)
+		Calculate iLocation as iNewLocation
+		Do method getWeather
+	End If
+	
+	Calculate iNewLocation as      ;; clear

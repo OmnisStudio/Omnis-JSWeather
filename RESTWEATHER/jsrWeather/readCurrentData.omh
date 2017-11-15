@@ -1,0 +1,45 @@
+
+Calculate lErrRow as lRow.error
+Calculate lErrStr as lErrRow.1.1
+If len(lErrStr)
+	Do method resetFields
+	Do $cinst.$showmessage(lErrStr,"Error")
+	Quit method
+End If
+
+Calculate lCurrentConditionRow as iJSONRow.current
+
+Calculate lObservedDateTime as lCurrentConditionRow.last_updated
+
+Calculate iCloudCover as con(lCurrentConditionRow.cloud,"%")
+Calculate lRow2 as lCurrentConditionRow.condition
+
+;  save the current conditions
+Do iCurrentConditionsList320.1.$assigncols(,lObservedDateTime)
+Do iCurrentConditionsList320.2.$assigncols(,con(int(lCurrentConditionRow.temp_C),"C / ",int(lCurrentConditionRow.temp_F),"F"))
+Do iCurrentConditionsList320.3.$assigncols(,lRow2.text)
+Do iCurrentConditionsList320.4.$assigncols(,iCloudCover)
+Do iCurrentConditionsList320.5.$assigncols(,con(int(lCurrentConditionRow.wind_mph),kSp,'mph'))
+Do iCurrentConditionsList320.6.$assigncols(,lCurrentConditionRow.wind_dir)
+Do iCurrentConditionsList320.7.$assigncols(,con(lCurrentConditionRow.pressure_mb,kSp,"mb"))
+Do iCurrentConditionsList320.8.$assigncols(,con(lCurrentConditionRow.humidity,"%"))
+Do iCurrentConditionsList768.1.$assigncols(,lObservedDateTime,,iCloudCover)
+Do iCurrentConditionsList768.2.$assigncols(,con(int(lCurrentConditionRow.temp_C),"C / ",int(lCurrentConditionRow.temp_F),"F"),,con(int(lCurrentConditionRow.wind_mph),kSp,'mph'))
+Do iCurrentConditionsList768.3.$assigncols(,lRow2.text,,lCurrentConditionRow.wind_dir)
+Do iCurrentConditionsList768.4.$assigncols(,con(lCurrentConditionRow.pressure_mb,kSp,"mb"),,con(lCurrentConditionRow.humidity,"%"))
+
+If iCurrentBP=320
+	Calculate iCurrentConditionsList as iCurrentConditionsList320
+Else
+	Calculate iCurrentConditionsList as iCurrentConditionsList768
+End If
+
+Calculate iCurrWeatherDesc as con(int(lCurrentConditionRow.temp_C),"C",kSp,lRow2.text)
+Calculate iCurrWeatherIconID as lRow2.icon
+Calculate iCurrWeatherIconID as con("<img src='",iCurrWeatherIconID,"'/>")
+Do $cinst.$objs.pagePane.$objs.currentPane.$objs.currWeatherIcon.$html.$assign(iCurrWeatherIconID) Returns #F
+Calculate iCurrPressure as con(lCurrentConditionRow.pressure_mb,kSp,"mb")
+Calculate iCurrWindSpeed as int(lCurrentConditionRow.wind_mph)
+Calculate iCurrWindDir as lCurrentConditionRow.wind_dir
+Calculate iCurrWindSpeed as con(iCurrWindSpeed,kSp,"mph",kSp,iCurrWindDir)
+Calculate iCurrHumidity as con(lCurrentConditionRow.humidity,"%")

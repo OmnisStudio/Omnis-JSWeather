@@ -1,0 +1,34 @@
+Calculate iScreensize as pRow.JSScreensize
+
+Calculate iLibName as $clib().$name
+Do method buildLists
+
+Do method getLocation     ;; detect location
+
+Do $itasks.[iLibName].$getLastUpdate(iLocation) Returns iLastUpdate     ;; get time of last cache for default city
+If ddiff(kHour,iLastUpdate,lCurrDate)<1
+	Do $itasks.[iLibName].$getLocalJSON(iLocation,iJSONRow,iJSONStr)
+	Do method readCurrentData
+	Do method readForecastData
+Else
+	Do method getWeather     ;; local weather
+End If
+
+Do $itasks.[iLibName].$getLastUpdateWorld() Returns iLastWorldUpdate     ;; get time of last cache for the world
+If ddiff(kHour,iLastWorldUpdate,lCurrDate)<1
+	For lNum from 1 to iWorldListTotal step 1
+		Do iWorldWeatherList.[lNum].$loadcols()
+		Do $itasks.[iLibName].$getWorldJSON(iWorldCity,iJSONRow,iJSONStr)
+		Do method readWorldData (lNum)
+	End For
+	;  split into 2 lists for 768 breakpoint
+	For lNum from 1 to 10 step 1
+		Do iWorldWeatherList1.[lNum].$assigncols(,iWorldWeatherList.[lNum].C2)
+	End For
+	For lNum from 11 to 20 step 1
+		Do iWorldWeatherList2.[lNum-10].$assigncols(,iWorldWeatherList.[lNum].C2)
+	End For
+Else
+	Do $itasks.[iLibName].$setLastUpdateWorld(lCurrDate)
+	Do method getWorldWeather (1,iWorldWeatherList.$linecount)
+End If

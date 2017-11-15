@@ -1,0 +1,3 @@
+Calculate tLibName as $clib().$name()
+Calculate tIPAddress as $ctask.$clientaddress
+Calculate tConnectionID as $ctask.$connectionid

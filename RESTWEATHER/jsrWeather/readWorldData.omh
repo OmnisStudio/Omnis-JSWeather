@@ -1,0 +1,12 @@
+Calculate lForecastRow as iJSONRow.forecast.forecastday.1.day
+Calculate lMaxTemp as lForecastRow.maxtemp_c
+
+Calculate lRow3 as lForecastRow.condition
+Calculate lWeatherIcon as lRow3.icon
+
+;  shrink icon
+Calculate lWeatherIcon as con("<img",kSp,'height=',kDq,'75%',kSp,kDq,'width=',kDq,'75%',kDq,kSp,"src='",lWeatherIcon,"'/>")
+
+Do iWorldWeatherList.[pNum].$assigncols(,con(lMaxTemp,kSp,'C'))
+Calculate lWorldCityIcon as con(lWorldCityIcon,pNum)
+Do $cinst.$objs.pagePane.$objs.[lWorldCityIcon].$html.$assign(lWeatherIcon) Returns #F

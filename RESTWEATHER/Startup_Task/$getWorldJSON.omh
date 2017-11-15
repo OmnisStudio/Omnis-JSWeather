@@ -1,0 +1,4 @@
+Do tWorldList.$search(tCity=pCity)
+Do tWorldList.$first(kTrue)
+Calculate pJSONRow as tWorldList.tJSONRow
+Calculate pJSONStr as tWorldList.tJSONStr

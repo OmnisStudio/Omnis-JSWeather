@@ -1,0 +1,13 @@
+Do iHypLinkList.$define(iHypLink)
+Do iHypLinkList.$add('About')
+
+Do iSummaryLinkList.$define(iHypLink)
+Do iSummaryLinkList.$add("Summary")
+
+Do iTableLinkList.$define(iHypLink)
+Do iTableLinkList.$add("Table")
+
+Do iErrorsList.$define(iError,iErrorStr)
+
+Do method buildCurrentConditionsList
+Do method buildWorldList

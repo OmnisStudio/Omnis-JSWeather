@@ -1,0 +1,11 @@
+Do method setSubFormPosLeft
+
+Do $cinst.$objs.aboutSubForm.$width.$assign(340)
+Do $cinst.$objs.aboutSubForm.$height.$assign(400)
+Do $cinst.$objs.aboutSubForm.$top.$assign(120)
+Do $cinst.$objs.aboutSubForm.$classname.$assign('jsrAbout')
+Do $cinst.$objs.aboutSubForm.$visible.$assign(kTrue)
+
+Do $cinst.$beginanimations(500,kJSAnimationCurveEaseIn)
+Do $cinst.$objs.aboutSubForm.$alpha.$assign(255)
+Do $cinst.$commitanimations()

@@ -1,0 +1,5 @@
+Do $cwind.$getHelpText(iPoweredBy) Returns iHelpText
+If len(iPoweredBy)
+	Do $cinst.$objs.poweredByHTML.$html.$assign(iPoweredBy)
+End If
+Do $cinst.$objs.closeBtn.$enabled.$assign(kTrue)

@@ -1,0 +1,9 @@
+Calculate lLocation as replaceall(iLocation,kSp,'%20')     ;; escape spaces
+Calculate iURI as con(iURL,iEndpointForecast,"?key=",tAPIKey,"&q=",lLocation,"&days=5")     ;; use forecast endpoint as the current weather is included in results anyway
+Do method getData Returns lStatus
+
+If lStatus
+	Do method readCurrentData
+	Do method readForecastData
+	Do $itasks.[iLibName].$setLastUpdate(iLocation,lLastTime,iJSONRow,iJSONStr)     ;; cache the data
+End If

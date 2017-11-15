@@ -1,0 +1,3 @@
+Do tCityList.$search($ref.tCity=pCity)
+Do tCityList.$first(kTrue)
+Quit method tCityList.tLastUpdate

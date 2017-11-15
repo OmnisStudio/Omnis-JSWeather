@@ -1,0 +1,4 @@
+On evClick
+	Do $cobj.$textcolor.$assign(rgb(140,180,228))
+	Do $cinst.$objs.pagePane.$objs.findPane.$objs.summaryLink.$textcolor.$assign(kWhite)
+	Do $cinst.$objs.pagePane.$objs.currentPane.$currentpage.$assign(2)

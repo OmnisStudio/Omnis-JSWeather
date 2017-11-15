@@ -1,0 +1,4 @@
+Calculate pResponseHeaders as iResponseHeaders
+Calculate pResponse as iResponse
+Calculate pJSONRow as iJSONRow
+Quit method iReturnStr

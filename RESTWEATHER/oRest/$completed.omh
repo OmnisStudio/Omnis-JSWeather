@@ -1,0 +1,5 @@
+;  called by the client worker with the results
+Calculate iResponse as pRow
+Calculate iResponseHeaders as pRow.responseHeaders
+Do OJSON.$formatjson(pRow.responseContent) Returns iReturnStr
+Do OJSON.$jsontolistorrow(pRow.responseContent) Returns iJSONRow

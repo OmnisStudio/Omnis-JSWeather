@@ -1,0 +1,7 @@
+Do tWorldList.$search(tCity=pCity)
+Do tWorldList.$first(kTrue)
+If not(tWorldList.$line)
+	Do tWorldList.$add(pCity,pJSONRow,pJSONStr)
+Else
+	Do tWorldList.$assigncols(,pJSONRow,pJSONStr)
+End If

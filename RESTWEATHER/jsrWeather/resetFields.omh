@@ -1,0 +1,24 @@
+;  clears the displayed fields when an invalid location has been provided
+
+Do method buildCurrentConditionsList
+Calculate iCurrWeatherDesc as
+Calculate iCurrPressure as
+Calculate iCloudCover as
+Calculate iCurrWindSpeed as
+Calculate iCurrHumidity as
+Calculate iDay1Max as
+Calculate iDay1Min as
+Calculate iDay2Max as
+Calculate iDay2Min as
+Calculate iDay3Max as
+Calculate iDay3Min as
+Calculate iDay4Max as
+Calculate iDay4Min as
+Calculate iDay5Max as
+Calculate iDay5Min as
+Do $cinst.$objs.pagePane.$objs.currentPane.$objs.currWeatherIcon.$html.$assign('')
+Do $cinst.$objs.pagePane.$objs.day1Pane.$objs.imgDay1.$html.$assign('')
+Do $cinst.$objs.pagePane.$objs.day2Pane.$objs.imgDay2.$html.$assign('')
+Do $cinst.$objs.pagePane.$objs.day3Pane.$objs.imgDay3.$html.$assign('')
+Do $cinst.$objs.pagePane.$objs.day4Pane.$objs.imgDay4.$html.$assign('')
+Do $cinst.$objs.pagePane.$objs.day5Pane.$objs.imgDay5.$html.$assign('')

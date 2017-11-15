@@ -1,0 +1,27 @@
+On evLayoutChanged
+	Calculate iCurrentBP as pBreakpoint
+	
+	If iConstruct
+		Do iWorldWeatherList1.$clear()
+		Do iWorldWeatherList2.$clear()
+		Do iWorldWeatherList.$search(iWorldWeatherList.$line<=10)
+		Do iWorldWeatherList1.$merge(iWorldWeatherList,,kTrue)
+		Do iWorldWeatherList.$search(iWorldWeatherList.$line>10)
+		Do iWorldWeatherList2.$merge(iWorldWeatherList,,kTrue)
+		Calculate iConstruct as kFalse
+	End If
+	
+	If iCurrentBP=320
+		Calculate iCurrentConditionsList as iCurrentConditionsList320
+		Do $cinst.$objs.pagePane.$objs.currentPane.$objs.currentConditionsGrid.$designcols.$assign(2)
+		Do $cinst.$objs.pagePane.$objs.currentPane.$objs.currentConditionsGrid.$::columnwidths.$assign("40,60")
+		Calculate iWorldWeatherList as iWorldWeatherList1
+		Do iWorldWeatherList.$merge(iWorldWeatherList2)
+	Else
+		Calculate iCurrentConditionsList as iCurrentConditionsList768
+		Do $cinst.$objs.pagePane.$objs.currentPane.$objs.currentConditionsGrid.$designcols.$assign(4)
+		Do $cinst.$objs.pagePane.$objs.currentPane.$objs.currentConditionsGrid.$::columnwidths.$assign("22,28,22,28")
+		Calculate iWorldWeatherList as iWorldWeatherList1
+	End If
+	
+	Do method setSubFormPosLeft

@@ -1,0 +1,30 @@
+
+Calculate lForecastRow as iJSONRow.forecast.forecastday
+
+Calculate iToday as dat(getdatetime(),'w, d n, y')
+Calculate iDay1Name as dname(kDay,iToday)
+Calculate iDay2Name as dname(kDay,(dadd(kDay,1,iToday)))
+Calculate iDay3Name as dname(kDay,(dadd(kDay,2,iToday)))
+Calculate iDay4Name as dname(kDay,(dadd(kDay,3,iToday)))
+Calculate iDay5Name as dname(kDay,(dadd(kDay,4,iToday)))
+
+;  create the forecast boxes
+For lNum from 1 to 5 step 1
+	Calculate lDayRow as lForecastRow.[lNum]
+	Calculate lMaxTemp as lDayRow.day.maxtemp_c
+	Calculate lMinTemp as lDayRow.day.mintemp_c
+	Calculate lVarName as con("iDay",lNum,"Max")
+	Calculate [lVarName] as con(lMaxTemp,'C')
+	Calculate lVarName as con("iDay",lNum,"Min")
+	Calculate [lVarName] as con(lMinTemp,'C')
+	Calculate lWeatherRow as lDayRow.day.condition
+	Calculate lWeatherDesc as lWeatherRow.text
+	Calculate lVarName as con("iDay",lNum,"WeatherDesc")
+	Calculate [lVarName] as con(lWeatherDesc,",",kSp,lMaxTemp,'C',kSp,'/',kSp,lMinTemp,'C')     ;; iDay1WeatherDesc
+	Calculate lVarName as con("iDay",lNum,"WeatherIcon")
+	Calculate lWeatherIcon as lWeatherRow.icon
+	Calculate lWeatherIcon as con("<img src='",lWeatherIcon,"'/>")
+	Calculate lDayPaneName as con("day",lNum,"Pane")
+	Calculate lImgName as con("imgDay",lNum)
+	Do $cinst.$objs.pagePane.$objs.[lDayPaneName].$objs.[lImgName].$html.$assign(lWeatherIcon) Returns #F
+End For
