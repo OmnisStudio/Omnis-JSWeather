@@ -1,8 +1,9 @@
 # Omnis-JSWeather
 Generated using the Omnis JS Client to create a demo weather app using RESTful Web Services.
+
 For further info, refer to the Omnis Tech note http://www.omnis.net/technotes/tnws0002.jsp
 
-Requires Omnis Studio 8.1.2 or above
+Requires Omnis Studio 8.1.2 or above.
 
 ## Demo
 A hosted version of Omnis Weather is running at http://omnisservice.mh.omnis-software.com/restweather/jsweather.htm
