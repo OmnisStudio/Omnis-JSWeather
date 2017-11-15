@@ -10,7 +10,7 @@ A hosted version of Omnis Weather is running at http://omnisservice.mh.omnis-sof
 
 Screenshot
 
-<img src="screenshots/omnis_weather.png" width="60%" height="60%">
+<img src="screenshots/omnisweather.png" width="60%" height="60%">
 
 ## Contents
 ### RESTWEATHER
