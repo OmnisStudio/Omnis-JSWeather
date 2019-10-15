@@ -1,30 +1,112 @@
-
-Calculate lForecastRow as iJSONRow.forecast.forecastday
+Calculate lLogMsg as con("Reading forecast data for",kSp,iLocation)
+Do $itasks.[tLibName].$updateLog(tIPAddress,lLogMsg) ## ram logging
 
 Calculate iToday as dat(getdatetime(),'w, d n, y')
 Calculate iDay1Name as dname(kDay,iToday)
+Calculate iDay1NameFull as con(iDay1Name,kSp,dtd(iToday))
 Calculate iDay2Name as dname(kDay,(dadd(kDay,1,iToday)))
-Calculate iDay3Name as dname(kDay,(dadd(kDay,2,iToday)))
-Calculate iDay4Name as dname(kDay,(dadd(kDay,3,iToday)))
-Calculate iDay5Name as dname(kDay,(dadd(kDay,4,iToday)))
+Calculate iDay2NameFull as con(iDay2Name,kSp,dtd((dadd(kDay,1,iToday))))
 
-;  create the forecast boxes
+Calculate iDay3Name as dname(kDay,(dadd(kDay,2,iToday)))
+Calculate iDay3NameFull as con(iDay3Name,kSp,dtd((dadd(kDay,2,iToday))))
+
+Calculate iDay4Name as dname(kDay,(dadd(kDay,3,iToday)))
+Calculate iDay4NameFull as con(iDay4Name,kSp,dtd((dadd(kDay,3,iToday))))
+
+Calculate iDay5Name as dname(kDay,(dadd(kDay,4,iToday)))
+Calculate iDay5NameFull as con(iDay5Name,kSp,dtd((dadd(kDay,4,iToday))))
+Calculate lFinalDay as dtd(dadd(kDay,4,iToday)) ## last day of forecast we want ?
+
+Do iForecastList.$define(iForecastDateTime,iForecastDay,iForecastTemp,iForecastDesc,iForecastClouds,iForecastWind,iForecastHumidity,iForecastPressure,iForecastIcon,iForecastDayOnly,iForecastDayNum)
+
+Calculate lCityRow as iJSONRow.city
+
+Calculate lNum as 1
+For lNum from 1 to iJSONRow.cnt step 1
+	Calculate lForecastRow as iJSONRow.list.[lNum]
+	
+	Calculate lWeatherDescRow as lForecastRow.weather.1
+	Calculate lMainConditionsRow as lForecastRow.main
+	Calculate lWindRow as lForecastRow.wind
+	Calculate lCloudsRow as lForecastRow.clouds
+	Calculate lObservedDateTime as lForecastRow.dt ## unix time
+	# Calculate lObservedDateTime as 1570007251
+	Do method convertUnixTime (lObservedDateTime,kTrue) Returns lObservedDateTimeStr
+	
+	Calculate lWeatherDescStr as lWeatherDescRow.main
+	If len(lWeatherDescRow.description)
+		Calculate lWeatherDescStr as con(lWeatherDescStr,kSp,"-",kSp,lWeatherDescRow.description)
+	End If
+	Calculate lForecastIcon as lWeatherDescRow.icon
+	
+	Calculate lForecastTemp as rnd(lMainConditionsRow.temp,0)
+	Calculate lForecastHumidity as con(lMainConditionsRow.humidity,"%")
+	Calculate lForecastPressure as con(rnd(lMainConditionsRow.pressure,0),kSp,"mb")
+	Calculate lForecastClouds as con(lCloudsRow.all,"%")
+	Calculate lForecastWind as lWindRow.speed
+	Do method convertMPStoMPH (lForecastWind) Returns lForecastWind
+	Calculate lForecastWind as rnd(lForecastWind,0)
+	Calculate lForecastWind as con(lForecastWind,kSp,"mph")
+	Calculate lForecastWindDir as rnd(lWindRow.deg,0)
+	Do method windDegreesToCompass (lForecastWindDir) Returns lForecastWindDir
+	Calculate lForecastWind as con(lForecastWind,kSp,lForecastWindDir)
+	
+	Calculate lForecastDateName as con(mid(dname(kDay,lObservedDateTimeStr),1,3),kSp,dtd(lObservedDateTimeStr))
+	Calculate lDayVar as "iDay1NameFull"
+	Calculate lDayNum as 1
+	While not(lForecastDateName=[lDayVar])
+		Calculate lDayNum as lDayNum+1
+		Calculate lDayVar as con("iDay",lDayNum,"NameFull")
+	End While
+	
+	Calculate iForecastDayOnly as dpart(kDay,lObservedDateTimeStr)
+	
+	If lDayNum<6 ## do not add data beyond 5 days
+		Do iForecastList.$add(lObservedDateTimeStr,[lDayVar],lForecastTemp,lWeatherDescStr,lForecastClouds,lForecastWind,lForecastHumidity,lForecastPressure,lForecastIcon,iForecastDayOnly,lDayNum)
+	Else
+		Break to end of loop ## don't bother with looping through data we will not use
+	End If
+	
+End For
+
+Calculate lTotal as iForecastList.$linecount
+
+# create the forecast boxes
+Do lForecastList.$copydefinition(iForecastList)
 For lNum from 1 to 5 step 1
-	Calculate lDayRow as lForecastRow.[lNum]
-	Calculate lMaxTemp as lDayRow.day.maxtemp_c
-	Calculate lMinTemp as lDayRow.day.mintemp_c
+	Do iForecastList.$search($ref.iForecastDayNum=lNum)
+	Do lForecastList.$merge(iForecastList,kTrue,kTrue,kTrue) ## merge selected columns into list and clear previous data in there
+	
+	Calculate lResetTemp as kTrue ## flag to ensure we set new max temp
+	
+	For lNum2 from 1 to lForecastList.$linecount step 1
+		Do lForecastList.[lNum2].$loadcols()
+		
+		If iForecastTemp>lMaxTemp|lResetTemp ## update the max temp if greater than we have
+			Calculate lMaxTemp as iForecastTemp
+			Calculate lResetTemp as kFalse
+		End If
+		
+		Calculate lTime as iForecastDateTime
+		If lTime<"12:00" ## get the first icon after 12:00
+		Else
+			Calculate lWeatherIcon as iForecastIcon
+			Calculate lWeatherIcon as con("http://openweathermap.org/img/wn/",lWeatherIcon,"@2x.png")
+			Calculate lWeatherIcon as con("<img",kSp,'height=',kDq,'100%',kSp,kDq,'width=',kDq,'100%',kDq,kSp,"src='",lWeatherIcon,"'/>") ## add 100% to draw icon to the html object size
+			
+			# Calculate lWeatherIcon as con("<img src='",lWeatherIcon,"'>")
+			Break to end of loop
+		End If
+	End For
+	
 	Calculate lVarName as con("iDay",lNum,"Max")
 	Calculate [lVarName] as con(lMaxTemp,'C')
 	Calculate lVarName as con("iDay",lNum,"Min")
-	Calculate [lVarName] as con(lMinTemp,'C')
-	Calculate lWeatherRow as lDayRow.day.condition
-	Calculate lWeatherDesc as lWeatherRow.text
-	Calculate lVarName as con("iDay",lNum,"WeatherDesc")
-	Calculate [lVarName] as con(lWeatherDesc,",",kSp,lMaxTemp,'C',kSp,'/',kSp,lMinTemp,'C')     ;; iDay1WeatherDesc
-	Calculate lVarName as con("iDay",lNum,"WeatherIcon")
-	Calculate lWeatherIcon as lWeatherRow.icon
-	Calculate lWeatherIcon as con("<img src='",lWeatherIcon,"'/>")
+	Calculate [lVarName] as iForecastWind
 	Calculate lDayPaneName as con("day",lNum,"Pane")
 	Calculate lImgName as con("imgDay",lNum)
 	Do $cinst.$objs.pagePane.$objs.[lDayPaneName].$objs.[lImgName].$html.$assign(lWeatherIcon) Returns #F
+	
 End For
+
+Quit method

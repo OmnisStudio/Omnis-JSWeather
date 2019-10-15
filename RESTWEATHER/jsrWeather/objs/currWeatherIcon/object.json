@@ -5,6 +5,7 @@
 	"componentlib": "jsHtml",
 	"componentctrl": "HTML Object",
 	"properties": {
+		"active": true,
 		"alpha": 255,
 		"autoscroll": false,
 		"backalpha": 255,
@@ -15,7 +16,7 @@
 		"cssclassname": "",
 		"ctrlname": "",
 		"dataname": "iCurrWeatherIconID",
-		"desgroup": 5,
+		"desgroup": 0,
 		"designactive": true,
 		"deslock": false,
 		"disabledefaultcontextmenu": false,
@@ -36,7 +37,8 @@
 		"tooltip": "",
 		"userinfo": "",
 		"vertscroll": false,
-		"visible": true
+		"visible": true,
+		"wraptext": false
 	},
 	"layout": {
 		"320": {

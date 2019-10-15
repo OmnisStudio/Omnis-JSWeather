@@ -1,9 +1,7 @@
 On evBefore
 	
 On evAfter
-	If not(iNewLocation=iLocation)
-		Calculate iLocation as iNewLocation
-		Do method getWeather
-	End If
 	
-	Calculate iNewLocation as      ;; clear
+On evKeyPress
+	Do iCityList.$search(mid(low(iCityName),1,len(iLocation))=low(iLocation))
+	# Do iLinkedList.$search(mid(low(iLinkedListCol),1,len(iEditVar))=low(iEditVar))

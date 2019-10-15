@@ -1,8 +1,9 @@
 {
 	"classtype": "kRemoteForm",
-	"internalversion": 27,
+	"omnisversion": "10.1",
+	"internalversion": 3,
 	"designtaskname": "rtTask",
-	"nextident": 1006,
+	"nextident": 1007,
 	"lastgroupident": 0,
 	"cvardefs": [
 
@@ -32,11 +33,12 @@
 		"backcolor": "RGB(255,255,255)",
 		"backpattern": 0,
 		"cancelkeyobject": "",
+		"canremotedebugwhenlocked": false,
 		"collectperformancedata": false,
 		"componenticon": 0,
 		"componenttype": "kCompStoreHidden",
 		"contextmenu": "",
-		"createdate": "2017-07-27 15:12:54",
+		"createdate": "2019-10-15 14:47:07",
 		"currentlayoutbreakpoint": 320,
 		"defaultappearance": "kAppearanceiOS",
 		"desc": "",
@@ -53,8 +55,8 @@
 		"issupercomponent": false,
 		"layoutbreakpoints": "320,768",
 		"layouttype": "kLayoutTypeResponsive",
-		"left": 232,
-		"moddate": "2017-11-15 14:21:06",
+		"left": 394,
+		"moddate": "2019-10-14 15:23:49",
 		"okkeyobject": "",
 		"serverlessclient": false,
 		"showascheckedout": false,
@@ -65,7 +67,7 @@
 			"type": 0,
 			"calc": "New remote form"
 		},
-		"top": 66,
+		"top": 58,
 		"userinfo": "",
 		"version": "1",
 		"vertgrid": 8,
@@ -75,10 +77,12 @@
 		"width": 547,
 		"height": 477,
 		"320": {
-			"height": 400
+			"height": 400,
+			"padding": 2
 		},
 		"768": {
-			"height": 0
+			"height": 0,
+			"padding": 2
 		}
 	}
 }

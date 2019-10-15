@@ -1,10 +1,11 @@
 {
 	"ident": 1003,
-	"order": 3,
+	"order": 2,
 	"objtype": "kComponent",
 	"componentlib": "jsHtml",
 	"componentctrl": "HTML Object",
 	"properties": {
+		"active": true,
 		"alpha": 255,
 		"autoscroll": false,
 		"backalpha": 255,
@@ -28,7 +29,7 @@
 		"fontsize": 10,
 		"fontstyle": "kPlain",
 		"horzscroll": false,
-		"html": "<div %t %e style=\";white-space:normal;%z %f\"></div>",
+		"html": "<div %t %e style=\";white-space:normal;%f %z\"></div>",
 		"linestyle": 1,
 		"objlink": 0,
 		"preventlayoutanimation": false,
@@ -36,7 +37,8 @@
 		"tooltip": "",
 		"userinfo": "",
 		"vertscroll": false,
-		"visible": true
+		"visible": true,
+		"wraptext": false
 	},
 	"layout": {
 		"320": {

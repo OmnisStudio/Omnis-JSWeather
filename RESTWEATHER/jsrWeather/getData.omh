@@ -1,21 +1,7 @@
 Do iHeadersList.$define(iHeaderName,iHeaderValue)
-Do iHeadersList.$add("content-type","application/json")
+Do iHeadersList.$add("content-type","application/json") ## this is reqd for ow3, cannot send empty list
 
-;  call the web service
+# call the web service
+
 Do iRestfulObj.$init(iURI,iHTTPMethod,iHeadersList,iContentChar)
 Do iRestfulObj.$run() Returns lStatus
-
-If lStatus
-	Do iRestfulObj.$returnVal(iResponseHeaders,iResponse,iJSONRow) Returns iJSONStr
-Else
-	Do $cinst.$showmessage(iRestfulObj.$errortext,"$run failed")
-End If
-
-If not(iResponse.httpStatusCode=200)
-	Calculate lResultsRow as iJSONRow.error
-	Do iErrorsList.$add(iResponse.httpStatusCode,con(lResultsRow.code,kSp,'-',kSp,lResultsRow.message))
-	Do $cinst.$showmessage(lResultsRow.message,'Error')
-	Quit method kFalse
-End If
-
-Quit method kTrue

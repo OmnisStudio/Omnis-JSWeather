@@ -1,4 +1,4 @@
-Do tCityList.$search($ref.tCity=pCity)
+Do tCityList.$search($ref.tCity=pCity&$ref.tForecast=pForecast)
 Do tCityList.$first(kTrue)
 Calculate pJSONRow as tCityList.tJSONRow
 Calculate pJSONStr as tCityList.tJSONStr

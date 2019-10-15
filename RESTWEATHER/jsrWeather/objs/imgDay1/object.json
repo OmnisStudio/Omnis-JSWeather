@@ -5,6 +5,7 @@
 	"componentlib": "jsHtml",
 	"componentctrl": "HTML Object",
 	"properties": {
+		"active": true,
 		"alpha": 255,
 		"autoscroll": false,
 		"backalpha": 255,
@@ -36,12 +37,13 @@
 		"tooltip": "",
 		"userinfo": "",
 		"vertscroll": false,
-		"visible": true
+		"visible": true,
+		"wraptext": false
 	},
 	"layout": {
 		"320": {
-			"left": -2,
-			"top": 30,
+			"left": 10,
+			"top": 40,
 			"width": 48,
 			"height": 48,
 			"align": "kLeftJst",
@@ -51,7 +53,7 @@
 			"visible": true
 		},
 		"768": {
-			"left": 35,
+			"left": 10,
 			"top": 40,
 			"width": 64,
 			"height": 64,

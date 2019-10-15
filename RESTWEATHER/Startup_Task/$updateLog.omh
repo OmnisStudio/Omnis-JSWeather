@@ -1,0 +1,2 @@
+Calculate lDateTime as #D
+Do iLogList.$add(lDateTime,pIPAddress,pLogMsg)

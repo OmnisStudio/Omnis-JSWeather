@@ -1,0 +1,4 @@
+Do lRow.$define(lSetName)
+Do lRow.$assigncols("restWeatherSet")
+
+Do $cinst.$clientcommand("subformset_remove",lRow)

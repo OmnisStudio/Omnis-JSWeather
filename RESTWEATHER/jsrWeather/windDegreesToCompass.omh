@@ -1,0 +1,5 @@
+# 22.5 each point of compass - create the index to generate the lookup in the compass list
+
+Calculate lIndex as (pDegrees/22.5)+1
+
+Quit method iWindCompassList.[lIndex].iWindCompassPoint

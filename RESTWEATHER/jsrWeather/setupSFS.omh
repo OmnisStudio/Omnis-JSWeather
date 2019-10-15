@@ -1,0 +1,6 @@
+Do iSFSFormList.$define(iFLID,iFLClassName,iFLParams,iFLTitle,iFLLeft,iFLTop,iFLWidth,iFLHeight)
+Do iOrderVarList.$define(iFLID,iFLClassName,iFLParams,iFLTitle,iFLLeft,iFLTop,iFLWidth,iFLHeight)
+
+Do $cinst.$clientcommand("subformset_add",row("restWeatherSet",'',kSFSflagCloseButton,"iOrderVarList",iSFSFormList))
+
+Calculate iSFSCreated as kTrue

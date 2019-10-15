@@ -1,3 +1,7 @@
 Calculate tLibName as $clib().$name()
 Calculate tIPAddress as $ctask.$clientaddress
 Calculate tConnectionID as $ctask.$connectionid
+
+Calculate lLogMsg as con("Connection",kSp,tConnectionID,kSp,"opened to",kSp,pRow.OmnisClass,kSp,"using",kSp,pRow.JSscreenSize,kSp,"(",pRow.JSScreenWidth,kSp,"x",kSp,pRow.JSscreenHeight,")",kSp,"Locale:",kSp,pRow.ClientLocale)
+
+Do $itasks.[tLibName].$updateLog(tIPAddress,lLogMsg)

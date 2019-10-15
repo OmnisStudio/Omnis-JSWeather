@@ -17,11 +17,13 @@ On evLayoutChanged
 		Do $cinst.$objs.pagePane.$objs.currentPane.$objs.currentConditionsGrid.$::columnwidths.$assign("40,60")
 		Calculate iWorldWeatherList as iWorldWeatherList1
 		Do iWorldWeatherList.$merge(iWorldWeatherList2)
+		# Do $cinst.$objs.pagePane.$effect.$assign(kJSborderNone)
 	Else
 		Calculate iCurrentConditionsList as iCurrentConditionsList768
 		Do $cinst.$objs.pagePane.$objs.currentPane.$objs.currentConditionsGrid.$designcols.$assign(4)
 		Do $cinst.$objs.pagePane.$objs.currentPane.$objs.currentConditionsGrid.$::columnwidths.$assign("22,28,22,28")
 		Calculate iWorldWeatherList as iWorldWeatherList1
+		# Do $cinst.$objs.pagePane.$effect.$assign(kJSborderPlain)
 	End If
 	
 	Do method setSubFormPosLeft

@@ -1,7 +1,6 @@
 [
 	{
 		"name": "$construct",
-		"ident": 1,
 		"order": 1,
 		"pvardefs": [
 
@@ -12,7 +11,6 @@
 	},
 	{
 		"name": "$destruct",
-		"ident": 2,
 		"order": 2,
 		"pvardefs": [
 
@@ -23,7 +21,6 @@
 	},
 	{
 		"name": "$completed",
-		"ident": 0,
 		"order": 3,
 		"pvardefs": [
 			{
@@ -61,7 +58,6 @@
 	},
 	{
 		"name": "$cancelled",
-		"ident": 3,
 		"order": 4,
 		"pvardefs": [
 			{
@@ -78,33 +74,16 @@
 		]
 	},
 	{
-		"name": "$returnVal",
-		"ident": 4,
-		"order": 5,
+		"name": "$setCallingRef",
+		"order": 6,
 		"pvardefs": [
 			{
-				"name": "pResponseHeaders",
+				"name": "pRef",
 				"order": 1,
-				"type": "kFieldreference",
-				"subtype": 0,
+				"type": "kItemref",
+				"subtype": "",
 				"sublen": 0,
 				"param": 1
-			},
-			{
-				"name": "pResponse",
-				"order": 2,
-				"type": "kFieldreference",
-				"subtype": 0,
-				"sublen": 0,
-				"param": 2
-			},
-			{
-				"name": "pJSONRow",
-				"order": 3,
-				"type": "kFieldreference",
-				"subtype": 0,
-				"sublen": 0,
-				"param": 3
 			}
 		],
 		"lvardefs": [

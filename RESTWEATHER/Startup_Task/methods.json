@@ -1,7 +1,6 @@
 [
 	{
 		"name": "$construct",
-		"ident": 0,
 		"order": 1,
 		"pvardefs": [
 
@@ -12,7 +11,6 @@
 	},
 	{
 		"name": "$destruct",
-		"ident": 1,
 		"order": 2,
 		"pvardefs": [
 
@@ -24,7 +22,6 @@
 	},
 	{
 		"name": "---local---",
-		"ident": 9,
 		"order": 3,
 		"pvardefs": [
 
@@ -36,7 +33,6 @@
 	},
 	{
 		"name": "$getLastUpdate",
-		"ident": 3,
 		"order": 4,
 		"pvardefs": [
 			{
@@ -46,6 +42,15 @@
 				"subtype": "kSimplechar",
 				"sublen": 100000000,
 				"param": 1
+			},
+			{
+				"name": "pForecast",
+				"order": 2,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 2,
+				"initval": "kFalse"
 			}
 		],
 		"lvardefs": [
@@ -54,7 +59,6 @@
 	},
 	{
 		"name": "$getLocalJSON",
-		"ident": 4,
 		"order": 5,
 		"pvardefs": [
 			{
@@ -80,6 +84,15 @@
 				"subtype": 0,
 				"sublen": 0,
 				"param": 3
+			},
+			{
+				"name": "pForecast",
+				"order": 4,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 4,
+				"initval": "kFalse"
 			}
 		],
 		"lvardefs": [
@@ -88,7 +101,6 @@
 	},
 	{
 		"name": "$setLastUpdate",
-		"ident": 2,
 		"order": 6,
 		"pvardefs": [
 			{
@@ -122,6 +134,15 @@
 				"subtype": "kSimplechar",
 				"sublen": 100000000,
 				"param": 4
+			},
+			{
+				"name": "pForecast",
+				"order": 5,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5,
+				"initval": "kFalse"
 			}
 		],
 		"lvardefs": [
@@ -130,7 +151,6 @@
 	},
 	{
 		"name": "----world----",
-		"ident": 8,
 		"order": 7,
 		"pvardefs": [
 
@@ -142,7 +162,6 @@
 	},
 	{
 		"name": "$getLastUpdateWorld",
-		"ident": 6,
 		"order": 8,
 		"pvardefs": [
 
@@ -153,7 +172,6 @@
 	},
 	{
 		"name": "$setLastUpdateWorld",
-		"ident": 10,
 		"order": 9,
 		"pvardefs": [
 			{
@@ -171,7 +189,6 @@
 	},
 	{
 		"name": "$getWorldJSON",
-		"ident": 7,
 		"order": 10,
 		"pvardefs": [
 			{
@@ -205,7 +222,6 @@
 	},
 	{
 		"name": "$setWorldJSON",
-		"ident": 5,
 		"order": 11,
 		"pvardefs": [
 			{
@@ -239,7 +255,6 @@
 	},
 	{
 		"name": "-----key---",
-		"ident": 13,
 		"order": 12,
 		"pvardefs": [
 
@@ -251,8 +266,7 @@
 	},
 	{
 		"name": "$setKey",
-		"ident": 12,
-		"order": 14,
+		"order": 13,
 		"pvardefs": [
 			{
 				"name": "pKey",
@@ -279,6 +293,136 @@
 				"subtype": "",
 				"sublen": 0
 			}
+		]
+	},
+	{
+		"name": "$updateLog",
+		"order": 14,
+		"pvardefs": [
+			{
+				"name": "pIPAddress",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			},
+			{
+				"name": "pLogMsg",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 2
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "lDateTime",
+				"order": 3,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 7
+			}
+		]
+	},
+	{
+		"name": "$getLog",
+		"order": 15,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$clearLog",
+		"order": 16,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "-----city list--",
+		"order": 17,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "readCityList",
+		"order": 18,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "lColCount",
+				"order": 5,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "lFileBin",
+				"order": 3,
+				"type": "kBinary",
+				"subtype": 0,
+				"sublen": 576716800
+			},
+			{
+				"name": "lFileOps",
+				"order": 1,
+				"type": "kObject",
+				"subtype": ".FileOps.FileOps",
+				"sublen": 0
+			},
+			{
+				"name": "lFilePath",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lList",
+				"order": 4,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "lNum",
+				"order": 6,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "lRow",
+				"order": 13,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$getCityList",
+		"order": 19,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
 		]
 	}
 ]

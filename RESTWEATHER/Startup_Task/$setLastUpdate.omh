@@ -1,7 +1,7 @@
-Do tCityList.$search(tCity=pCity)
+Do tCityList.$search(tCity=pCity&$ref.tForecast=pForecast)
 Do tCityList.$first(kTrue)
 If not(tCityList.$line)
-	Do tCityList.$add(pCity,pUpdate,pJSONRow,pJSONStr)
+	Do tCityList.$add(pCity,pUpdate,pJSONRow,pJSONStr,pForecast)
 Else
-	Do tCityList.$assigncols(,pUpdate,pJSONRow,pJSONStr)
+	Do tCityList.$assigncols(,pUpdate,pJSONRow,pJSONStr,pForecast)
 End If

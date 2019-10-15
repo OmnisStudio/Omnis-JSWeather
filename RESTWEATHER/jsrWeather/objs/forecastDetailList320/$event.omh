@@ -1,0 +1,10 @@
+On evClick
+	Do method getForecastIcon (pVertCell)
+	
+On evDoubleClick
+	
+On evCellChanged
+	
+On evHeaderClick
+	
+On evHeadedListDisplayOrderChanged

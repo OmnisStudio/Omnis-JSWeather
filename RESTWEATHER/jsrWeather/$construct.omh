@@ -1,27 +1,39 @@
 Calculate iScreensize as pRow.JSScreensize
+Do method setupSFS
 
-Calculate iLibName as $clib().$name
+# Do $itasks.[tLibName].$getCityList Returns iCityList
+# Do iCityList.$redefine(iCityName,iCityCountry,iCityID)
+
+Do $objects.oRest.$newref() Returns iRestfulObj
+Do iRestfulObj.$setCallingRef($cinst)
+
 Do method buildLists
 
-Do method getLocation     ;; detect location
+Calculate iLocation as "Saxmundham"
 
-Do $itasks.[iLibName].$getLastUpdate(iLocation) Returns iLastUpdate     ;; get time of last cache for default city
+Do $itasks.[tLibName].$getLastUpdate(iLocation) Returns iLastUpdate ## get time of last cache for default city
 If ddiff(kHour,iLastUpdate,lCurrDate)<1
-	Do $itasks.[iLibName].$getLocalJSON(iLocation,iJSONRow,iJSONStr)
+	Calculate lLogMsg as "Getting location cached data"
+	Do $itasks.[tLibName].$updateLog(tIPAddress,lLogMsg)
+	Do $itasks.[tLibName].$getLocalJSON(iLocation,iJSONRow,iJSONStr,kFalse)
 	Do method readCurrentData
+	Do $itasks.[tLibName].$getLocalJSON(iLocation,iJSONRow,iJSONStr,kTrue)
 	Do method readForecastData
 Else
-	Do method getWeather     ;; local weather
+	Calculate lLogMsg as con("Obtaining forecast data for",kSp,iLocation)
+	Do $itasks.[tLibName].$updateLog(tIPAddress,lLogMsg)
+	Do method getWeather ## local weather
 End If
 
-Do $itasks.[iLibName].$getLastUpdateWorld() Returns iLastWorldUpdate     ;; get time of last cache for the world
+Do $itasks.[tLibName].$getLastUpdateWorld() Returns iLastWorldUpdate ## get time of last cache for the world
 If ddiff(kHour,iLastWorldUpdate,lCurrDate)<1
+	Calculate lLogMsg as "Getting worldwide cached data"
+	Do $itasks.[tLibName].$updateLog(tIPAddress,lLogMsg)
 	For lNum from 1 to iWorldListTotal step 1
 		Do iWorldWeatherList.[lNum].$loadcols()
-		Do $itasks.[iLibName].$getWorldJSON(iWorldCity,iJSONRow,iJSONStr)
+		Do $itasks.[tLibName].$getWorldJSON(iWorldCity,iJSONRow,iJSONStr)
 		Do method readWorldData (lNum)
 	End For
-	;  split into 2 lists for 768 breakpoint
 	For lNum from 1 to 10 step 1
 		Do iWorldWeatherList1.[lNum].$assigncols(,iWorldWeatherList.[lNum].C2)
 	End For
@@ -29,6 +41,8 @@ If ddiff(kHour,iLastWorldUpdate,lCurrDate)<1
 		Do iWorldWeatherList2.[lNum-10].$assigncols(,iWorldWeatherList.[lNum].C2)
 	End For
 Else
-	Do $itasks.[iLibName].$setLastUpdateWorld(lCurrDate)
+	Calculate lLogMsg as "Obtaining worldwide data for cities"
+	Do $itasks.[tLibName].$updateLog(tIPAddress,lLogMsg)
+	Do $itasks.[tLibName].$setLastUpdateWorld(lCurrDate)
 	Do method getWorldWeather (1,iWorldWeatherList.$linecount)
 End If

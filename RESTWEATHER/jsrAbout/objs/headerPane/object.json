@@ -1,10 +1,13 @@
 {
 	"ident": 1005,
-	"order": 5,
+	"order": 4,
 	"objtype": "kPagedPane",
 	"properties": {
+		"active": true,
 		"alpha": 255,
 		"animatetransitions": false,
+		"arialabel": "",
+		"arialabelledby": "",
 		"autoscroll": false,
 		"backalpha": 255,
 		"backcolor": "RGB(150,180,228)",
@@ -21,6 +24,7 @@
 		"effect": "kJSborderNone",
 		"enabled": true,
 		"events": "",
+		"landmark": "kLandmarkNone",
 		"linestyle": 1,
 		"objlink": 0,
 		"pagecount": 1,

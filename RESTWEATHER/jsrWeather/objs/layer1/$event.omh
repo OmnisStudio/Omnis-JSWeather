@@ -1,0 +1,3 @@
+On evClick
+	Do method getForecastDetail (1)
+	Do $cinst.$objs.pagePane.$objs.detailPane.$currentpage.$assign(2)

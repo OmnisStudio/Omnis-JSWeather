@@ -1,0 +1,8 @@
+Calculate lLocalDate as dadd(kSecond,pUnixTime,lEpochDate)
+
+If pIgnoreDST
+	Quit method lLocalDate
+End If
+
+Quit method utctoloc(lLocalDate)
+# return the date adjusted to daylight saving

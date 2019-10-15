@@ -1,7 +1,6 @@
 [
 	{
 		"name": "$construct",
-		"ident": 0,
 		"order": 1,
 		"pvardefs": [
 			{
@@ -14,19 +13,36 @@
 			}
 		],
 		"lvardefs": [
-
+			{
+				"name": "lKey",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lLogMsg",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
 		]
 	},
 	{
 		"name": "$destruct",
-		"ident": 1,
 		"order": 2,
 		"pvardefs": [
 
 		],
 		"lvardefs": [
-
-		],
-		"empty": true
+			{
+				"name": "lLogMsg",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
 	}
 ]

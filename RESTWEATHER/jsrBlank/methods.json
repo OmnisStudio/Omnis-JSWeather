@@ -1,7 +1,6 @@
 [
 	{
 		"name": "$construct",
-		"ident": 0,
 		"order": 1,
 		"clientexec": false,
 		"pvardefs": [
@@ -13,7 +12,6 @@
 	},
 	{
 		"name": "$destruct",
-		"ident": 1,
 		"order": 2,
 		"clientexec": false,
 		"pvardefs": [
@@ -25,7 +23,6 @@
 	},
 	{
 		"name": "New Method",
-		"ident": 2,
 		"order": 3,
 		"clientexec": false,
 		"pvardefs": [

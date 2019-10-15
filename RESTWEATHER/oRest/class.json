@@ -1,5 +1,6 @@
 {
 	"classtype": "kObjectclass",
+	"omnisversion": "10.1",
 	"internalversion": 3,
 	"superclass": ".OW3.OW3 Worker Objects\\HTTPClientWorker",
 	"designtaskname": "Startup_Task",
@@ -8,45 +9,25 @@
 	],
 	"ivardefs": [
 		{
-			"name": "iJSONRow",
-			"order": 6,
-			"type": "kRow",
+			"name": "iCallingRef",
+			"order": 2,
+			"type": "kItemref",
 			"subtype": "",
 			"sublen": 0
-		},
-		{
-			"name": "iResponse",
-			"order": 5,
-			"type": "kRow",
-			"subtype": "",
-			"sublen": 0
-		},
-		{
-			"name": "iResponseHeaders",
-			"order": 4,
-			"type": "kRow",
-			"subtype": "",
-			"sublen": 0
-		},
-		{
-			"name": "iReturnStr",
-			"order": 1,
-			"type": "kCharacter",
-			"subtype": "kSimplechar",
-			"sublen": 100000000
 		}
 	],
 	"properties": {
+		"canremotedebugwhenlocked": false,
 		"collectperformancedata": false,
 		"componenticon": 0,
 		"componenttype": "kCompStoreHidden",
-		"createdate": "2017-07-27 15:12:51",
+		"createdate": "2019-10-15 14:47:06",
 		"desc": "",
 		"editor": "",
 		"editordata": "",
 		"external": true,
 		"issupercomponent": false,
-		"moddate": "2014-08-14 11:44:54",
+		"moddate": "2019-10-14 12:46:39",
 		"selfcontained": false,
 		"showascheckedout": false,
 		"userinfo": "",

@@ -1,2 +1,3 @@
 On evClick
-	Do method openSubForm
+	# Do method openSubForm
+	Do method $openSFSDialog ("jsrAbout","","")

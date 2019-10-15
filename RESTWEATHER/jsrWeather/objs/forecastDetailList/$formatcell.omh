@@ -1,0 +1,13 @@
+# generate the icon
+If pCol=8
+	Calculate lCurrWeatherIconID as iForecastDisplayList.[pRow].[9]
+	Calculate lCurrWeatherIconID as con("http://openweathermap.org/img/wn/",lCurrWeatherIconID,"@2x.png")
+	Calculate lCurrWeatherIconID as con("<img src='",lCurrWeatherIconID,"'>")
+	Quit method lCurrWeatherIconID
+End If
+
+If pCol=2
+	Calculate lHTML as con(iForecastDisplayList.[pCol].[3],"C")
+	Calculate lHTML as styledtohtml(lHTML)
+	Quit method lHTML
+End If

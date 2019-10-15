@@ -3,6 +3,7 @@
 	"order": 74,
 	"objtype": "kSubwindow",
 	"properties": {
+		"active": true,
 		"alpha": 255,
 		"backalpha": 0,
 		"backcolor": "RGB(255,255,255)",
@@ -40,8 +41,8 @@
 			"visible": true
 		},
 		"768": {
-			"left": 311,
-			"top": 587,
+			"left": 296,
+			"top": 554,
 			"width": 129,
 			"height": 121,
 			"dragborder": false,

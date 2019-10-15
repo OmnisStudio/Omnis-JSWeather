@@ -1,9 +1,10 @@
 
 For lNum from pFrom to pTo step 1
 	Do iWorldWeatherList.[lNum].$loadcols(lLocation)
-	Calculate lLocationEscaped as replaceall(lLocation,kSp,'%20')     ;; escape spaces
-	Calculate iURI as con(iURL,iEndpointForecast,"?key=",tAPIKey,"&q=",lLocationEscaped,"&days=1")     ;; ram 26/7/17 - was days=5
+	Calculate lLocationEscaped as replaceall(lLocation,kSp,'%20') ## escape spaces
+	Calculate iURI as con(iURL,iCurrentForecast,"?appid=",tAPIKey,"&q=",lLocationEscaped,"&units=metric")
+	
 	Do method getData
-	Do $itasks.[iLibName].$setWorldJSON(lLocation,iJSONRow,iJSONStr)
+	Do $itasks.[tLibName].$setWorldJSON(lLocation,iJSONRow,iJSONStr)
 	Do method readWorldData (lNum)
 End For

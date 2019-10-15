@@ -1,0 +1,2 @@
+Calculate lLogMsg as con("Connection",kSp,tConnectionID,kSp,"closed")
+Do $itasks.[tLibName].$updateLog(tIPAddress,lLogMsg)

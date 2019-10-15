@@ -1,6 +1,7 @@
 {
 	"classtype": "kTask",
-	"internalversion": 4,
+	"omnisversion": "10.1",
+	"internalversion": 3,
 	"tvardefs": [
 		{
 			"name": "tCity",
@@ -15,6 +16,14 @@
 			"type": "kList",
 			"subtype": "",
 			"sublen": 0
+		},
+		{
+			"name": "tForecast",
+			"order": 10,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "kFalse"
 		},
 		{
 			"name": "tJSONRow",
@@ -57,6 +66,13 @@
 			"type": "kList",
 			"subtype": "",
 			"sublen": 0
+		},
+		{
+			"name": "tzCurrent",
+			"order": 9,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
 		}
 	],
 	"cvardefs": [
@@ -64,24 +80,88 @@
 	],
 	"ivardefs": [
 		{
+			"name": "iCityCountry",
+			"order": 10,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iCityID",
+			"order": 8,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iCityList",
+			"order": 7,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "iCityName",
+			"order": 9,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iLogDateTime",
+			"order": 3,
+			"type": "kDate",
+			"subtype": "kDatetime",
+			"sublen": 7
+		},
+		{
+			"name": "iLogIPAddress",
+			"order": 4,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iLogList",
+			"order": 1,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "iLogMessage",
+			"order": 5,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
 			"name": "iRemoteTaskRef",
 			"order": 2,
 			"type": "kItemref",
 			"subtype": "",
 			"sublen": 0
+		},
+		{
+			"name": "iTimerObj",
+			"order": 6,
+			"type": "kObject",
+			"subtype": ".Timer Library.Timer",
+			"sublen": 0
 		}
 	],
 	"properties": {
+		"canremotedebugwhenlocked": false,
 		"collectperformancedata": false,
 		"componenticon": 0,
 		"componenttype": "kCompStoreHidden",
-		"createdate": "2017-07-27 15:12:48",
+		"createdate": "2019-10-15 14:47:04",
 		"desc": "",
 		"editor": "",
 		"editordata": "",
 		"external": false,
 		"issupercomponent": false,
-		"moddate": "2017-07-27 17:21:52",
+		"moddate": "2019-10-15 12:40:38",
 		"showascheckedout": false,
 		"userinfo": "",
 		"version": "1"

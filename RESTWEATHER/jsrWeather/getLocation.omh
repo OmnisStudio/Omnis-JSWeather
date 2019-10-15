@@ -1,7 +1,0 @@
-Calculate lIPAddress as $ctask.$clientaddress
-
-If not(lIPAddress="127.0.0.1")
-	Calculate iURI as con(iURL,iSearchEndPoint,"?key=",tAPIKey,"&q=auto:ip")
-	Do method getData
-	Do method readLocation
-End If

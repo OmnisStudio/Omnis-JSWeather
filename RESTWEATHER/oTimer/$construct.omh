@@ -1,0 +1,8 @@
+Calculate iLastDispatchDay as dpart(kDay,#D) ## store todays date, so we know whether the day has changed later on
+
+Calculate #FT as 'H:N:S'
+Calculate lSeconds as 3600 ## hourly
+
+Do $cinst.$useseconds.$assign(kTrue)
+Do $cinst.$autoreset.$assign(kTrue) Returns #F
+Do $cinst.$timervalue.$assign(lSeconds) Returns #F

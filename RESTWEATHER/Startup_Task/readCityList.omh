@@ -1,0 +1,22 @@
+Do iCityList.$define(iCityName,iCityCountry,iCityID)
+Calculate lFilePath as sys(10)
+Calculate lFilePath as mid(lFilePath,1,rpos(sys(9),lFilePath)-1)
+Calculate lFilePath as con(lFilePath,sys(9),"current.city.list.json")
+
+# Calculate lFilePath as "/users/richardmiller/downloads/current.city.list.json"
+Do lFileOps.$openfile(lFilePath)
+Do lFileOps.$readfile(lFileBin)
+Do lFileOps.$closefile()
+
+Do OJSON.$jsontolistorrow(lFileBin,#ERRTEXT) Returns lList
+Calculate lRow as lList.1
+Calculate lColCount as lList.$colcount
+
+For lNum from 1 to lColCount step 1
+	Calculate lRow as lList.1.[lNum]
+	Do iCityList.$add(lRow.name,lRow.country,lRow.id)
+End For
+
+Do iCityList.$sort($ref.C1)
+Do iCityList.$search($ref.C1="")
+Do iCityList.$remove(kListDeleteSelected)

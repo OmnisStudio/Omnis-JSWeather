@@ -1,0 +1,12 @@
+Do $cinst.$stoptimer()
+
+Do $ctask.$updateHistory(,"Timer Called")
+
+Calculate iCurrDay as dpart(kDay,#D) ## todays date
+If not(iCurrDay=iLastDispatchDay) ## the day has changed
+	Calculate iLastDispatchDay as iCurrDay
+	
+	Do $ctask.$clearLog()
+End If
+
+Do $cinst.$starttimer()

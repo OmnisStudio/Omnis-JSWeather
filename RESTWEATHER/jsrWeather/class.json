@@ -1,13 +1,42 @@
 {
 	"classtype": "kRemoteForm",
-	"internalversion": 61,
+	"omnisversion": "10.1",
+	"internalversion": 3,
 	"designtaskname": "rtTask",
-	"nextident": 1078,
-	"lastgroupident": 6,
+	"nextident": 1095,
+	"lastgroupident": 9,
 	"cvardefs": [
 
 	],
 	"ivardefs": [
+		{
+			"name": "iCityCountry",
+			"order": 43,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iCityID",
+			"order": 50,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "iCityList",
+			"order": 61,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "iCityName",
+			"order": 40,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
 		{
 			"name": "iCloudCover",
 			"order": 47,
@@ -29,13 +58,6 @@
 			"type": "kCharacter",
 			"subtype": "kSimplechar",
 			"sublen": 100000000
-		},
-		{
-			"name": "iCurrCityNum",
-			"order": 61,
-			"type": "kInteger",
-			"subtype": "k32bitint",
-			"sublen": 0
 		},
 		{
 			"name": "iCurrentBP",
@@ -64,6 +86,14 @@
 			"type": "kList",
 			"subtype": "",
 			"sublen": 0
+		},
+		{
+			"name": "iCurrentForecast",
+			"order": 84,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000,
+			"initval": "\"/data/2.5/weather\""
 		},
 		{
 			"name": "iCurrEventFact",
@@ -157,6 +187,13 @@
 			"sublen": 3
 		},
 		{
+			"name": "iDay1NameFull",
+			"order": 96,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
 			"name": "iDay1WeatherIcon",
 			"order": 16,
 			"type": "kCharacter",
@@ -183,6 +220,13 @@
 			"type": "kCharacter",
 			"subtype": "kSimplechar",
 			"sublen": 3
+		},
+		{
+			"name": "iDay2NameFull",
+			"order": 97,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
 		},
 		{
 			"name": "iDay2WeatherIcon",
@@ -213,6 +257,13 @@
 			"sublen": 3
 		},
 		{
+			"name": "iDay3NameFull",
+			"order": 98,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
 			"name": "iDay3WeatherIcon",
 			"order": 14,
 			"type": "kCharacter",
@@ -239,6 +290,13 @@
 			"type": "kCharacter",
 			"subtype": "kSimplechar",
 			"sublen": 3
+		},
+		{
+			"name": "iDay4NameFull",
+			"order": 99,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
 		},
 		{
 			"name": "iDay4WeatherIcon",
@@ -269,6 +327,13 @@
 			"sublen": 3
 		},
 		{
+			"name": "iDay5NameFull",
+			"order": 100,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
 			"name": "iDay5WeatherIcon",
 			"order": 10,
 			"type": "kCharacter",
@@ -281,8 +346,8 @@
 			"type": "kCharacter",
 			"subtype": "kSimplechar",
 			"sublen": 100000000,
-			"initval": "\"/forecast.json\"",
-			"desc": "apixu"
+			"initval": "\"/data/2.5/forecast\"",
+			"desc": "openweathermap"
 		},
 		{
 			"name": "iError",
@@ -301,6 +366,160 @@
 		{
 			"name": "iErrorStr",
 			"order": 46,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iFLClassName",
+			"order": 108,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iFLHeight",
+			"order": 114,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "iFLID",
+			"order": 107,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iFLLeft",
+			"order": 111,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "iFLParams",
+			"order": 109,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iFLTitle",
+			"order": 110,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iFLTop",
+			"order": 112,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "iFLWidth",
+			"order": 113,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "iForecastClouds",
+			"order": 90,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iForecastDateTime",
+			"order": 94,
+			"type": "kDate",
+			"subtype": "kDatetime",
+			"sublen": 0
+		},
+		{
+			"name": "iForecastDay",
+			"order": 87,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iForecastDayNum",
+			"order": 103,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "iForecastDayOnly",
+			"order": 102,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "iForecastDesc",
+			"order": 89,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iForecastDisplayList",
+			"order": 104,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "iForecastForDate",
+			"order": 105,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iForecastHumidity",
+			"order": 92,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iForecastIcon",
+			"order": 95,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iForecastList",
+			"order": 74,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "iForecastPressure",
+			"order": 93,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iForecastTemp",
+			"order": 88,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "iForecastWind",
+			"order": 91,
 			"type": "kCharacter",
 			"subtype": "kSimplechar",
 			"sublen": 100000000
@@ -377,13 +596,6 @@
 			"sublen": 0
 		},
 		{
-			"name": "iLibName",
-			"order": 40,
-			"type": "kCharacter",
-			"subtype": "kSimplechar",
-			"sublen": 100000000
-		},
-		{
 			"name": "iLocation",
 			"order": 45,
 			"type": "kCharacter",
@@ -406,9 +618,9 @@
 			"sublen": 100000000
 		},
 		{
-			"name": "iResponse",
-			"order": 50,
-			"type": "kRow",
+			"name": "iOrderVarList",
+			"order": 115,
+			"type": "kList",
 			"subtype": "",
 			"sublen": 0
 		},
@@ -434,13 +646,19 @@
 			"sublen": 100000000
 		},
 		{
-			"name": "iSearchEndPoint",
-			"order": 43,
-			"type": "kCharacter",
-			"subtype": "kSimplechar",
-			"sublen": 100000000,
-			"initval": "\"/search.json\"",
-			"desc": "apixu"
+			"name": "iSFSCreated",
+			"order": 117,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "kFalse"
+		},
+		{
+			"name": "iSFSFormList",
+			"order": 106,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
 		},
 		{
 			"name": "iSummaryLinkList",
@@ -476,8 +694,22 @@
 			"type": "kCharacter",
 			"subtype": "kSimplechar",
 			"sublen": 100000000,
-			"initval": "\"http://api.apixu.com/v1\"",
-			"desc": "\"http://api.worldweatheronline.com\""
+			"initval": "\"http://api.openweathermap.org\"",
+			"desc": "\"http://api.worldweatheronline.com\" // \"http://api.apixu.com/v1\""
+		},
+		{
+			"name": "iWindCompassList",
+			"order": 85,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "iWindCompassPoint",
+			"order": 86,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
 		},
 		{
 			"name": "iWorldCity",
@@ -596,16 +828,17 @@
 		"aligntogrid": false,
 		"alpha": 255,
 		"alwaysenabledobject": "",
-		"animatelayouttransitions": false,
+		"animatelayouttransitions": true,
 		"backalpha": 255,
 		"backcolor": "RGB(255,255,255)",
 		"backpattern": 0,
 		"cancelkeyobject": "",
+		"canremotedebugwhenlocked": false,
 		"collectperformancedata": false,
 		"componenticon": 0,
 		"componenttype": "kCompStoreHidden",
 		"contextmenu": "",
-		"createdate": "2017-07-27 15:12:56",
+		"createdate": "2019-10-15 14:47:08",
 		"currentlayoutbreakpoint": 768,
 		"defaultappearance": "kAppearanceiOS",
 		"desc": "",
@@ -622,9 +855,9 @@
 		"issupercomponent": false,
 		"layoutbreakpoints": "320,768",
 		"layouttype": "kLayoutTypeResponsive",
-		"left": 249,
-		"moddate": "2017-11-15 11:58:50",
-		"okkeyobject": "",
+		"left": 64,
+		"moddate": "2019-10-15 12:44:48",
+		"okkeyobject": "findBtn",
 		"serverlessclient": false,
 		"showascheckedout": false,
 		"showgrid": false,
@@ -634,20 +867,22 @@
 			"type": 0,
 			"calc": "New remote form"
 		},
-		"top": 9,
+		"top": 3,
 		"userinfo": "",
 		"version": "1",
 		"vertgrid": 8,
 		"vertscroll": false
 	},
 	"layout": {
-		"width": 884,
-		"height": 695,
+		"width": 863,
+		"height": 764,
 		"320": {
-			"height": 900
+			"height": 900,
+			"padding": 2
 		},
 		"768": {
-			"height": 0
+			"height": 650,
+			"padding": 2
 		}
 	}
 }

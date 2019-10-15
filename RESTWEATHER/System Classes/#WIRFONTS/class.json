@@ -1,9 +1,10 @@
 {
 	"classtype": "kSystemtable",
+	"omnisversion": "10.1",
 	"internalversion": 3,
 	"properties": {
 		"componenttype": "kCompStoreHidden",
-		"createdate": "2017-07-27 15:12:32",
+		"createdate": "2019-10-15 14:46:55",
 		"desc": "",
 		"external": false,
 		"moddate": "2014-08-11 10:57:03",

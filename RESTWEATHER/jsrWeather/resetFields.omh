@@ -1,4 +1,4 @@
-;  clears the displayed fields when an invalid location has been provided
+# clears the displayed fields when an invalid location has been provided
 
 Do method buildCurrentConditionsList
 Calculate iCurrWeatherDesc as

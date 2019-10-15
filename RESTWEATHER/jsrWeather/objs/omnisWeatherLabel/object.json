@@ -5,6 +5,7 @@
 	"componentlib": "jsLabel",
 	"componentctrl": "Label Object",
 	"properties": {
+		"active": true,
 		"alpha": 255,
 		"backalpha": 255,
 		"backcolor": "RGB(255,255,255)",
@@ -23,8 +24,10 @@
 		"font": 1,
 		"fontsize": 18,
 		"fontstyle": "kBold",
+		"labelfor": "",
 		"objlink": 65537,
 		"preventlayoutanimation": false,
+		"tagtype": "kJSLabelTypeLabel",
 		"text": "Omnis Weather ",
 		"textcolor": "RGB(85,85,85)",
 		"textishtml": false,

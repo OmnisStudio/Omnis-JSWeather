@@ -1,14 +1,16 @@
 On evTabSelected
 	Do $cinst.$objs.pagePane.$currentpage.$assign(pTabNumber)
 	
-	Do $itasks.[iLibName].$getLastUpdateWorld() Returns iLastWorldUpdate     ;; get time of last cache for the world
-	If ddiff(kHour,iLastWorldUpdate,lCurrDate)<1     ;; only check every hour
-		;  display cached version
+	Do $itasks.[tLibName].$getLastUpdateWorld() Returns iLastWorldUpdate ## get time of last cache for the world
+	If ddiff(kHour,iLastWorldUpdate,lCurrDate)<1 ## only check every hour
+		# display cached version
 	Else
-		Do $itasks.[iLibName].$setLastUpdateWorld(lCurrDate)
+		Do $itasks.[tLibName].$setLastUpdateWorld(lCurrDate)
 		Do method buildWorldList
-		Do method getWorldWeather (1,4)     ;; get the first 4 cities
-		Calculate iCurrCityNum as 4
-		;  start the timer     ;; we can only call the web service 5 times a second
-		Do $cinst.$objs.timerObj.$running.$assign(kTrue)
+		Do method getWorldWeather (1,iWorldWeatherList.$linecount)
+		
+		# Do method getWorldWeather (1,4) ## get the first 4 cities
+		# Calculate iCurrCityNum as 4
+		# start the timer ## we can only call the web service 5 times a second
+		# Do $cinst.$objs.timerObj.$running.$assign(kTrue)
 	End If

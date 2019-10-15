@@ -1,0 +1,4 @@
+Calculate lCurrWeatherIconID as iForecastDisplayList.[pLine].C9
+Calculate lCurrWeatherIconID as con("http://openweathermap.org/img/wn/",lCurrWeatherIconID,"@2x.png")
+Calculate lCurrWeatherIconID as con("<img src='",lCurrWeatherIconID,"'>")
+Do $cinst.$objs.pagePane.$objs.currentPane.$objs.detailPane.$objs.forecastIcon.$html.$assign(lCurrWeatherIconID)

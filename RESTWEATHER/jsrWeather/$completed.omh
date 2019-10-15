@@ -1,0 +1,7 @@
+Calculate iResponseHeaders as pRow.responseHeaders
+Do OJSON.$formatjson(pRow.responseContent) Returns iJSONStr
+Do OJSON.$jsontolistorrow(pRow.responseContent) Returns iJSONRow
+
+If iJSONRow.cod<>200
+	Do $cinst.$showmessage(iJSONRow.message,"Omnis Weather")
+End If

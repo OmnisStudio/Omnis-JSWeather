@@ -1,0 +1,5 @@
+Do iForecastDisplayList.$copydefinition(iForecastList)
+Do iForecastList.$search(iForecastList.iForecastDayNum=pDay)
+Do iForecastDisplayList.$merge(iForecastList,kTrue,kTrue,kTrue)
+Calculate iForecastForDate as con(iForecastDisplayList.1.C2,kSp,dtm(iForecastDisplayList.1.C1),kSp,dtcy(iForecastDisplayList.1.C1))
+Do method getForecastIcon (1) ## show icon for first line of forecast

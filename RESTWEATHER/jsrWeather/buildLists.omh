@@ -11,3 +11,4 @@ Do iErrorsList.$define(iError,iErrorStr)
 
 Do method buildCurrentConditionsList
 Do method buildWorldList
+Do method createWindCompassList

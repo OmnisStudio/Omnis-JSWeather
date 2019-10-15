@@ -1,2 +1,2 @@
 On evClick
-	Do $cwind.$closeSubForm()
+	Do $cwind.$closeDialog()

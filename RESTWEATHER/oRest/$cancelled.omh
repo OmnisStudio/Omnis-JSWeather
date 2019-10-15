@@ -1,1 +1,1 @@
-;  called by the client worker when request is cancelled
+# called by the client worker when request is cancelled

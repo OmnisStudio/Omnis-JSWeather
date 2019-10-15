@@ -1,7 +1,6 @@
 [
 	{
 		"name": "$construct",
-		"ident": 0,
 		"order": 1,
 		"clientexec": false,
 		"pvardefs": [
@@ -24,6 +23,13 @@
 				"initval": "#D"
 			},
 			{
+				"name": "lLogMsg",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
 				"name": "lNum",
 				"order": 2,
 				"type": "kInteger",
@@ -34,7 +40,6 @@
 	},
 	{
 		"name": "$destruct",
-		"ident": 1,
 		"order": 2,
 		"clientexec": false,
 		"pvardefs": [
@@ -46,7 +51,6 @@
 	},
 	{
 		"name": "$event",
-		"ident": 2,
 		"order": 3,
 		"clientexec": false,
 		"pvardefs": [
@@ -58,7 +62,6 @@
 	},
 	{
 		"name": "buildLists",
-		"ident": 4,
 		"order": 4,
 		"clientexec": false,
 		"pvardefs": [
@@ -70,7 +73,6 @@
 	},
 	{
 		"name": "buildCurrentConditionsList",
-		"ident": 5,
 		"order": 5,
 		"clientexec": false,
 		"pvardefs": [
@@ -82,20 +84,12 @@
 	},
 	{
 		"name": "getData",
-		"ident": 6,
 		"order": 6,
 		"clientexec": false,
 		"pvardefs": [
 
 		],
 		"lvardefs": [
-			{
-				"name": "lResultsRow",
-				"order": 2,
-				"type": "kRow",
-				"subtype": "",
-				"sublen": 0
-			},
 			{
 				"name": "lStatus",
 				"order": 1,
@@ -108,7 +102,6 @@
 	},
 	{
 		"name": "readCurrentData",
-		"ident": 7,
 		"order": 7,
 		"clientexec": false,
 		"pvardefs": [
@@ -123,15 +116,22 @@
 				"sublen": 0
 			},
 			{
-				"name": "lErrRow",
-				"order": 3,
-				"type": "kRow",
-				"subtype": "",
-				"sublen": 0
+				"name": "lCurrTemp",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
 			},
 			{
-				"name": "lErrStr",
-				"order": 4,
+				"name": "lCurrWindSpeed",
+				"order": 13,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lLogMsg",
+				"order": 5,
 				"type": "kCharacter",
 				"subtype": "kSimplechar",
 				"sublen": 100000000
@@ -144,15 +144,29 @@
 				"sublen": 100000000
 			},
 			{
-				"name": "lRow",
-				"order": 1,
+				"name": "lObservedDateTimeStr",
+				"order": 11,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lWeatherDescRow",
+				"order": 8,
 				"type": "kRow",
 				"subtype": "",
 				"sublen": 0
 			},
 			{
-				"name": "lRow2",
-				"order": 8,
+				"name": "lWeatherDescStr",
+				"order": 12,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lWindRow",
+				"order": 10,
 				"type": "kRow",
 				"subtype": "",
 				"sublen": 0
@@ -161,13 +175,33 @@
 	},
 	{
 		"name": "readForecastData",
-		"ident": 8,
 		"order": 8,
 		"clientexec": false,
 		"pvardefs": [
 
 		],
 		"lvardefs": [
+			{
+				"name": "lCityRow",
+				"order": 22,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "lCloudsRow",
+				"order": 31,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "lDayNum",
+				"order": 38,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
 			{
 				"name": "lDayPaneName",
 				"order": 8,
@@ -176,11 +210,60 @@
 				"sublen": 100000000
 			},
 			{
-				"name": "lDayRow",
-				"order": 12,
-				"type": "kRow",
+				"name": "lDayVar",
+				"order": 37,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lFinalDay",
+				"order": 23,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "lForecastClouds",
+				"order": 32,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lForecastDateName",
+				"order": 35,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lForecastHumidity",
+				"order": 27,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lForecastIcon",
+				"order": 34,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lForecastList",
+				"order": 40,
+				"type": "kList",
 				"subtype": "",
 				"sublen": 0
+			},
+			{
+				"name": "lForecastPressure",
+				"order": 30,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
 			},
 			{
 				"name": "lForecastRow",
@@ -190,6 +273,27 @@
 				"sublen": 0
 			},
 			{
+				"name": "lForecastTemp",
+				"order": 29,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "lForecastWind",
+				"order": 28,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lForecastWindDir",
+				"order": 33,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
 				"name": "lImgName",
 				"order": 1,
 				"type": "kCharacter",
@@ -197,15 +301,22 @@
 				"sublen": 100000000
 			},
 			{
-				"name": "lMaxTemp",
-				"order": 5,
-				"type": "kInteger",
-				"subtype": "k32bitint",
+				"name": "lLogMsg",
+				"order": 9,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lMainConditionsRow",
+				"order": 18,
+				"type": "kRow",
+				"subtype": "",
 				"sublen": 0
 			},
 			{
-				"name": "lMinTemp",
-				"order": 4,
+				"name": "lMaxTemp",
+				"order": 5,
 				"type": "kInteger",
 				"subtype": "k32bitint",
 				"sublen": 0
@@ -218,6 +329,49 @@
 				"sublen": 0
 			},
 			{
+				"name": "lNum2",
+				"order": 43,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "lObservedDateTime",
+				"order": 20,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lObservedDateTimeStr",
+				"order": 21,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lResetTemp",
+				"order": 3,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"initval": "kFalse"
+			},
+			{
+				"name": "lTime",
+				"order": 13,
+				"type": "kDate",
+				"subtype": "kTime",
+				"sublen": 0
+			},
+			{
+				"name": "lTotal",
+				"order": 39,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
 				"name": "lVarName",
 				"order": 6,
 				"type": "kCharacter",
@@ -225,8 +379,15 @@
 				"sublen": 100000000
 			},
 			{
-				"name": "lWeatherDesc",
-				"order": 2,
+				"name": "lWeatherDescRow",
+				"order": 17,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "lWeatherDescStr",
+				"order": 25,
 				"type": "kCharacter",
 				"subtype": "kSimplechar",
 				"sublen": 100000000
@@ -239,8 +400,8 @@
 				"sublen": 100000000
 			},
 			{
-				"name": "lWeatherRow",
-				"order": 3,
+				"name": "lWindRow",
+				"order": 19,
 				"type": "kRow",
 				"subtype": "",
 				"sublen": 0
@@ -249,7 +410,6 @@
 	},
 	{
 		"name": "getWeather",
-		"ident": 9,
 		"order": 9,
 		"clientexec": false,
 		"pvardefs": [
@@ -270,20 +430,11 @@
 				"type": "kCharacter",
 				"subtype": "kSimplechar",
 				"sublen": 100000000
-			},
-			{
-				"name": "lStatus",
-				"order": 3,
-				"type": "kBoolean",
-				"subtype": 0,
-				"sublen": 0,
-				"initval": "kFalse"
 			}
 		]
 	},
 	{
 		"name": "resetFields",
-		"ident": 10,
 		"order": 10,
 		"clientexec": false,
 		"pvardefs": [
@@ -295,7 +446,6 @@
 	},
 	{
 		"name": "------world----",
-		"ident": 11,
 		"order": 11,
 		"clientexec": false,
 		"pvardefs": [
@@ -308,7 +458,6 @@
 	},
 	{
 		"name": "buildWorldList",
-		"ident": 12,
 		"order": 12,
 		"clientexec": false,
 		"pvardefs": [
@@ -320,7 +469,6 @@
 	},
 	{
 		"name": "getWorldWeather",
-		"ident": 13,
 		"order": 13,
 		"clientexec": false,
 		"pvardefs": [
@@ -362,12 +510,18 @@
 				"type": "kInteger",
 				"subtype": "k32bitint",
 				"sublen": 0
+			},
+			{
+				"name": "lNumDays",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
 			}
 		]
 	},
 	{
 		"name": "readWorldData",
-		"ident": 14,
 		"order": 14,
 		"clientexec": false,
 		"pvardefs": [
@@ -381,6 +535,20 @@
 			}
 		],
 		"lvardefs": [
+			{
+				"name": "lCurrentConditionRow",
+				"order": 4,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "lCurrTemp",
+				"order": 9,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
 			{
 				"name": "lForecastRow",
 				"order": 3,
@@ -398,6 +566,13 @@
 			{
 				"name": "lRow3",
 				"order": 2,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "lWeatherDescRow",
+				"order": 1,
 				"type": "kRow",
 				"subtype": "",
 				"sublen": 0
@@ -421,7 +596,6 @@
 	},
 	{
 		"name": "------about----",
-		"ident": 15,
 		"order": 15,
 		"clientexec": false,
 		"pvardefs": [
@@ -434,7 +608,6 @@
 	},
 	{
 		"name": "$getHelpText",
-		"ident": 16,
 		"order": 16,
 		"clientexec": false,
 		"pvardefs": [
@@ -459,7 +632,6 @@
 	},
 	{
 		"name": "openSubForm",
-		"ident": 17,
 		"order": 17,
 		"clientexec": false,
 		"pvardefs": [
@@ -471,7 +643,6 @@
 	},
 	{
 		"name": "$closeSubForm",
-		"ident": 18,
 		"order": 18,
 		"clientexec": false,
 		"pvardefs": [
@@ -483,7 +654,6 @@
 	},
 	{
 		"name": "setSubFormPosLeft",
-		"ident": 3,
 		"order": 19,
 		"clientexec": false,
 		"pvardefs": [
@@ -494,9 +664,195 @@
 		]
 	},
 	{
-		"name": "-----location----",
-		"ident": 19,
-		"order": 20,
+		"name": "------------",
+		"order": 23,
+		"clientexec": false,
+		"pvardefs": [
+			{
+				"name": "pDegrees",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1,
+				"initval": "340"
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "lIndex",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "0"
+			}
+		],
+		"empty": true
+	},
+	{
+		"name": "windDegreesToCompass",
+		"order": 24,
+		"clientexec": false,
+		"pvardefs": [
+			{
+				"name": "pDegrees",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1,
+				"initval": "270"
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "lIndex",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "0"
+			}
+		]
+	},
+	{
+		"name": "createWindCompassList",
+		"order": 25,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "convertUnixTime",
+		"order": 26,
+		"clientexec": false,
+		"pvardefs": [
+			{
+				"name": "pUnixTime",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pIgnoreDST",
+				"order": 4,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 2,
+				"initval": "kFalse"
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "lEpochDate",
+				"order": 3,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 0,
+				"initval": "\"1 Jan 1970 00:00:00\""
+			},
+			{
+				"name": "lLocalDate",
+				"order": 2,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "convertMPStoMPH",
+		"order": 27,
+		"clientexec": false,
+		"pvardefs": [
+			{
+				"name": "pMPS",
+				"order": 1,
+				"type": "kNumber",
+				"subtype": "k2dp",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "lConvertRate",
+				"order": 2,
+				"type": "kNumber",
+				"subtype": "k4dp",
+				"sublen": 0,
+				"initval": "2.2369"
+			}
+		]
+	},
+	{
+		"name": "getForecastDetail",
+		"order": 28,
+		"clientexec": false,
+		"pvardefs": [
+			{
+				"name": "pDay",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pRow",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 2
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "lCurrWeatherIconID",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "getForecastIcon",
+		"order": 29,
+		"clientexec": false,
+		"pvardefs": [
+			{
+				"name": "pLine",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1,
+				"initval": "1"
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "lCurrWeatherIconID",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "--------sfs------",
+		"order": 30,
 		"clientexec": false,
 		"pvardefs": [
 
@@ -507,66 +863,38 @@
 		"empty": true
 	},
 	{
-		"name": "getLocation",
-		"ident": 20,
-		"order": 21,
+		"name": "setupSFS",
+		"order": 31,
 		"clientexec": false,
 		"pvardefs": [
 
 		],
 		"lvardefs": [
-			{
-				"name": "lIPAddress",
-				"order": 1,
-				"type": "kCharacter",
-				"subtype": "kSimplechar",
-				"sublen": 100000000
-			}
+
 		]
 	},
 	{
-		"name": "readLocation",
-		"ident": 21,
-		"order": 22,
+		"name": "removeFromSFS",
+		"order": 32,
 		"clientexec": false,
 		"pvardefs": [
 
 		],
 		"lvardefs": [
 			{
-				"name": "lErrRow",
-				"order": 2,
-				"type": "kRow",
-				"subtype": "",
-				"sublen": 0
-			},
-			{
-				"name": "lErrStr",
-				"order": 3,
+				"name": "lClassName",
+				"order": 6,
 				"type": "kCharacter",
 				"subtype": "kSimplechar",
 				"sublen": 100000000
 			},
 			{
-				"name": "lLocation",
-				"order": 9,
-				"type": "kCharacter",
-				"subtype": "kSimplechar",
-				"sublen": 100000000
-			},
-			{
-				"name": "lLocationList",
-				"order": 8,
-				"type": "kList",
-				"subtype": "",
-				"sublen": 0
-			},
-			{
-				"name": "lPosComma",
-				"order": 7,
-				"type": "kInteger",
-				"subtype": "k64bitint",
-				"sublen": 0
+				"name": "lFocus",
+				"order": 4,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"initval": "kFalse"
 			},
 			{
 				"name": "lRow",
@@ -574,7 +902,197 @@
 				"type": "kRow",
 				"subtype": "",
 				"sublen": 0
+			},
+			{
+				"name": "lSetName",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lUniqueID",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
 			}
+		]
+	},
+	{
+		"name": "removeSFS",
+		"order": 33,
+		"clientexec": false,
+		"pvardefs": [
+			{
+				"name": "pClassName",
+				"order": 5,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "lFocus",
+				"order": 4,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"initval": "kFalse"
+			},
+			{
+				"name": "lRow",
+				"order": 1,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "lSetName",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lUniqueID",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "$openSFSDialog",
+		"order": 34,
+		"clientexec": false,
+		"pvardefs": [
+			{
+				"name": "pClassName",
+				"order": 6,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			},
+			{
+				"name": "pParams",
+				"order": 7,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 2
+			},
+			{
+				"name": "pTitle",
+				"order": 5,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 3
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "lHeight",
+				"order": 9,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "lList",
+				"order": 1,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "lTimePeriod",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lWidth",
+				"order": 8,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$closeDialog",
+		"order": 35,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "lFocus",
+				"order": 4,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"initval": "kFalse"
+			},
+			{
+				"name": "lRow",
+				"order": 1,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "lSetName",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lUniqueID",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "----ow3 response----",
+		"order": 36,
+		"clientexec": false,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "$completed",
+		"order": 37,
+		"clientexec": false,
+		"pvardefs": [
+			{
+				"name": "pRow",
+				"order": 1,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+
 		]
 	}
 ]

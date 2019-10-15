@@ -1,14 +1,18 @@
 On evClick
+	If isnull(iLocation)
+		Calculate iLocation as "Saxmundham"
+	End If
 	If not(iNewLocation=iLocation)&len(iNewLocation)
 		Calculate iLocation as cap(iNewLocation)
-		Do $itasks.[iLibName].$getLastUpdate(iLocation) Returns iLastUpdate
+		Do $itasks.[tLibName].$getLastUpdate(iLocation) Returns iLastUpdate
 		If ddiff(kHour,iLastUpdate,lCurrDate)<1
-			Do $itasks.[iLibName].$getLocalJSON(iLocation,iJSONRow,iJSONStr)
+			Do $itasks.[tLibName].$getLocalJSON(iLocation,iJSONRow,iJSONStr,kFalse)
 			Do method readCurrentData
+			Do $itasks.[tLibName].$getLocalJSON(iLocation,iJSONRow,iJSONStr,kTrue)
 			Do method readForecastData
 		Else
-			Do method getWeather     ;; local weather
+			Do method getWeather ## local weather
 		End If
 	End If
 	
-	Calculate iNewLocation as      ;; clear
+	Calculate iNewLocation as ## clear
