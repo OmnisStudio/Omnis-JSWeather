@@ -8,6 +8,10 @@ Requires Omnis Studio 10.1 or above.
 ## Demo
 A hosted version of Omnis Weather is running at http://omnisservice.mh.omnis-software.com/restweather/jsweather.htm
 
+## Screenshot
+
+<img src="screenshots/omnisweather.png" width="80%" height="80%">
+
 ## Contents
 ### RESTWEATHER
 This folder contains the source JSON files for the Omnis library in Github. 
