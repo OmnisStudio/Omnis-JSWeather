@@ -29,7 +29,7 @@
 		"designactive": true,
 		"deslock": false,
 		"disabledefaultcontextmenu": false,
-		"disablesystemfocus": false,
+		"disablesystemfocus": true,
 		"dragmode": "kNoDragging",
 		"dropmode": "kAcceptNone",
 		"effect": "kJSborderNone",
@@ -76,7 +76,7 @@
 		"768": {
 			"left": 249,
 			"top": 75,
-			"width": 59,
+			"width": 67,
 			"height": 25,
 			"align": "kLeftJst",
 			"dragborder": false,

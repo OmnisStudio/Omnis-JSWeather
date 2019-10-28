@@ -3,8 +3,8 @@
 	"omnisversion": "10.1",
 	"internalversion": 3,
 	"designtaskname": "rtTask",
-	"nextident": 1007,
-	"lastgroupident": 0,
+	"nextident": 1010,
+	"lastgroupident": 4,
 	"cvardefs": [
 
 	],
@@ -19,6 +19,13 @@
 		{
 			"name": "iPoweredBy",
 			"order": 2,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000
+		},
+		{
+			"name": "iTechNote",
+			"order": 3,
 			"type": "kCharacter",
 			"subtype": "kSimplechar",
 			"sublen": 100000000
@@ -38,7 +45,7 @@
 		"componenticon": 0,
 		"componenttype": "kCompStoreHidden",
 		"contextmenu": "",
-		"createdate": "2019-10-15 14:47:07",
+		"createdate": "2019-10-28 15:25:06",
 		"currentlayoutbreakpoint": 320,
 		"defaultappearance": "kAppearanceiOS",
 		"desc": "",
@@ -55,8 +62,8 @@
 		"issupercomponent": false,
 		"layoutbreakpoints": "320,768",
 		"layouttype": "kLayoutTypeResponsive",
-		"left": 394,
-		"moddate": "2019-10-14 15:23:49",
+		"left": 277,
+		"moddate": "2019-10-28 15:22:33",
 		"okkeyobject": "",
 		"serverlessclient": false,
 		"showascheckedout": false,
@@ -67,7 +74,7 @@
 			"type": 0,
 			"calc": "New remote form"
 		},
-		"top": 58,
+		"top": 20,
 		"userinfo": "",
 		"version": "1",
 		"vertgrid": 8,
@@ -75,9 +82,9 @@
 	},
 	"layout": {
 		"width": 547,
-		"height": 477,
+		"height": 572,
 		"320": {
-			"height": 400,
+			"height": 425,
 			"padding": 2
 		},
 		"768": {

@@ -1,9 +1,6 @@
 Calculate iScreensize as pRow.JSScreensize
 Do method setupSFS
 
-# Do $itasks.[tLibName].$getCityList Returns iCityList
-# Do iCityList.$redefine(iCityName,iCityCountry,iCityID)
-
 Do $objects.oRest.$newref() Returns iRestfulObj
 Do iRestfulObj.$setCallingRef($cinst)
 

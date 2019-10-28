@@ -1,4 +1,6 @@
 Calculate pPoweredBy as 'Powered by <a href="http://www.openweathermap.org/" 𯿿title="Free local weather content provider" 𯿿target="_blank">OpenWeatherMap</a>'
+Calculate pTechNoteLink as '<a href="https://www.omnis.net/developers/resources/technotes/tnws0002.jsp" 𯿿title="Omnis Studio Tech Notes" 𯿿target="_blank">RESTful Web Services: implementing a Client</a>'
+# https://www.omnis.net/developers/resources/technotes/tnws0002.jsp
 
 Begin text block
 Text:Omnis Weather is an example of using Omnis as a client to consume a Restful web service.(Carriage return)
@@ -7,6 +9,8 @@ Text:This example uses the restful service published by openweathermap.org to pr
 Text:of the current weather conditions as well as the forecast for the following 4 days.(Carriage return)
 Text:(Carriage return)
 Text:Although the forecasts are frequently updated, the data for a city is cached for 1 hour after initial retrieval from OpenWeatherMap.(Carriage return)
+Text:(Carriage return)
+Text:For more details on how this demo app was created, see this tech note:
 End text block
 Get text block lHelpText
 Quit method lHelpText

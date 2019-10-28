@@ -1,6 +1,6 @@
 {
 	"ident": 1089,
-	"order": 81,
+	"order": 79,
 	"objtype": "kComponent",
 	"componentlib": "jsDgrd",
 	"componentctrl": "Data grid Control",
@@ -75,12 +75,12 @@
 		"multifilters": false,
 		"multipleselect": false,
 		"numberformat": "",
-		"objlink": 131147,
+		"objlink": 131145,
 		"pagerpage": 1,
 		"pagesize": 0,
 		"preventlayoutanimation": false,
 		"rowcsscol": 0,
-		"selectedlinecolor": "kColorDefault",
+		"selectedlinecolor": "RGB(150,180,228)",
 		"selectedlinetextcolor": "kColorDefault",
 		"setlineheight": false,
 		"sortascending": true,
@@ -93,7 +93,7 @@
 		"visible": true
 	},
 	"multivalueproperties": {
-		"selected": 3,
+		"selected": 1,
 		"properties": [
 			{
 				"columnallownulldateinput": false,
@@ -283,7 +283,7 @@
 		"320": {
 			"left": 50,
 			"top": 35,
-			"width": 250,
+			"width": 251,
 			"height": 270,
 			"dragborder": false,
 			"edgefloat": "kEFright",

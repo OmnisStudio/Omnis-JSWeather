@@ -1,5 +1,8 @@
-Do $cwind.$getHelpText(iPoweredBy) Returns iHelpText
+Do $cwind.$getHelpText(iPoweredBy,iTechNote) Returns iHelpText
 If len(iPoweredBy)
 	Do $cinst.$objs.poweredByHTML.$html.$assign(iPoweredBy)
+End If
+If len(iTechNote)
+	Do $cinst.$objs.techNoteLinkHTML.$html.$assign(iTechNote)
 End If
 Do $cinst.$objs.closeBtn.$enabled.$assign(kTrue)

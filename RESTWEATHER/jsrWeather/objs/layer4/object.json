@@ -1,6 +1,6 @@
 {
 	"ident": 1086,
-	"order": 79,
+	"order": 77,
 	"objtype": "kComponent",
 	"componentlib": "jsLabel",
 	"componentctrl": "Label Object",
@@ -25,7 +25,7 @@
 		"fontsize": 10,
 		"fontstyle": "kPlain",
 		"labelfor": "",
-		"objlink": 65611,
+		"objlink": 65609,
 		"preventlayoutanimation": false,
 		"tagtype": "kJSLabelTypeLabel",
 		"text": "",

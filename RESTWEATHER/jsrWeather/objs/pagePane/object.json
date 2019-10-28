@@ -42,8 +42,8 @@
 		"320": {
 			"left": 0,
 			"top": 0,
-			"width": 319,
-			"height": 899,
+			"width": 320,
+			"height": 900,
 			"dragborder": false,
 			"edgefloat": "kEFposnClient",
 			"errortextpos": "kJSErrorTextPosUnder",

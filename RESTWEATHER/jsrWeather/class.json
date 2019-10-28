@@ -1,10 +1,10 @@
 {
 	"classtype": "kRemoteForm",
 	"omnisversion": "10.1",
-	"internalversion": 3,
+	"internalversion": 142,
 	"designtaskname": "rtTask",
-	"nextident": 1095,
-	"lastgroupident": 9,
+	"nextident": 1097,
+	"lastgroupident": 11,
 	"cvardefs": [
 
 	],
@@ -838,7 +838,7 @@
 		"componenticon": 0,
 		"componenttype": "kCompStoreHidden",
 		"contextmenu": "",
-		"createdate": "2019-10-15 14:47:08",
+		"createdate": "2019-10-28 15:25:07",
 		"currentlayoutbreakpoint": 768,
 		"defaultappearance": "kAppearanceiOS",
 		"desc": "",
@@ -855,8 +855,8 @@
 		"issupercomponent": false,
 		"layoutbreakpoints": "320,768",
 		"layouttype": "kLayoutTypeResponsive",
-		"left": 64,
-		"moddate": "2019-10-15 12:44:48",
+		"left": 439,
+		"moddate": "2019-10-28 16:48:44",
 		"okkeyobject": "findBtn",
 		"serverlessclient": false,
 		"showascheckedout": false,
@@ -867,7 +867,7 @@
 			"type": 0,
 			"calc": "New remote form"
 		},
-		"top": 3,
+		"top": 8,
 		"userinfo": "",
 		"version": "1",
 		"vertgrid": 8,

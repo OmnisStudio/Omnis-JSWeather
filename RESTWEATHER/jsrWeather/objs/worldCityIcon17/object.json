@@ -1,6 +1,6 @@
 {
 	"ident": 1070,
-	"order": 70,
+	"order": 69,
 	"objtype": "kComponent",
 	"componentlib": "jsHtml",
 	"componentctrl": "HTML Object",

@@ -1,4 +1,4 @@
 # general method for opening sfs dialog
 Calculate lWidth as 340
-Calculate lHeight as 400
+Calculate lHeight as 425
 Do $cinst.$clientcommand("subformset_formadd",row("restWeatherSet",1,pClassName,pParams,pTitle,kSFScenter,kSFScenter,lWidth,lHeight,1))

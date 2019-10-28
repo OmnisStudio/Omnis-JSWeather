@@ -29,7 +29,7 @@
 		"designactive": true,
 		"deslock": false,
 		"disabledefaultcontextmenu": false,
-		"disablesystemfocus": false,
+		"disablesystemfocus": true,
 		"dragmode": "kNoDragging",
 		"dropmode": "kAcceptNone",
 		"effect": "kJSborderNone",

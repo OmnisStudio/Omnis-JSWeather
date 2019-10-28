@@ -1,6 +1,6 @@
 {
 	"ident": 1053,
-	"order": 53,
+	"order": 52,
 	"objtype": "kComponent",
 	"componentlib": "jsDgrd",
 	"componentctrl": "Data grid Control",
@@ -153,7 +153,7 @@
 		"320": {
 			"left": 35,
 			"top": 89,
-			"width": 280,
+			"width": 281,
 			"height": 775,
 			"dragborder": false,
 			"edgefloat": "kEFright",

@@ -29,7 +29,7 @@
 		"designactive": true,
 		"deslock": false,
 		"disabledefaultcontextmenu": false,
-		"disablesystemfocus": false,
+		"disablesystemfocus": true,
 		"dragmode": "kNoDragging",
 		"dropmode": "kAcceptNone",
 		"effect": "kJSborderNone",
@@ -65,7 +65,7 @@
 		"320": {
 			"left": 103,
 			"top": 27,
-			"width": 212,
+			"width": 213,
 			"height": 19,
 			"align": "kLeftJst",
 			"dragborder": false,
@@ -76,11 +76,11 @@
 		"768": {
 			"left": 249,
 			"top": 34,
-			"width": 290,
+			"width": 497,
 			"height": 25,
 			"align": "kLeftJst",
 			"dragborder": false,
-			"edgefloat": "kEFnone",
+			"edgefloat": "kEFright",
 			"errortextpos": "kJSErrorTextPosUnder",
 			"visible": true
 		}

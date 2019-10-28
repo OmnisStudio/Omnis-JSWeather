@@ -1,6 +1,6 @@
 {
 	"ident": 1050,
-	"order": 50,
+	"order": 49,
 	"objtype": "kComponent",
 	"componentlib": "jsTabs",
 	"componentctrl": "Tab Control",
@@ -98,7 +98,7 @@
 		"320": {
 			"left": 218,
 			"top": 19,
-			"width": 99,
+			"width": 100,
 			"height": 30,
 			"align": "kCenterJst",
 			"dragborder": false,
